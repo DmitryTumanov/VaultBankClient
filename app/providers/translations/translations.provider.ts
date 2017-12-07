@@ -64,4 +64,5 @@ export class TranslationsProvider extends BaseTranslationsProvider{
     get editTaskEndPlaceholder(){ return this.get("editTaskEndPlaceholder");}
     get editTaskMonthSumPlaceholder(){ return this.get("editTaskMonthSumPlaceholder");}
     get editTaskTotalSumPlaceholder(){ return this.get("editTaskTotalSumPlaceholder");}
+    get paused(){ return this.get("paused");}
 }

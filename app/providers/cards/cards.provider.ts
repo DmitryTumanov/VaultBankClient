@@ -27,18 +27,19 @@ export class CardsProvider {
     async addCard(newCard: CardModel): Promise<boolean> {
         return await this.cardsService.addCard(newCard).then((result: boolean) => {
             if (result) {
-                this._cards.push(newCard);
+                this._cards = null; //just for updating
             }
             return result;
         });
     }
 
     async removeCard(card: CardModel) {
-        return await this.cardsService.removeCard(card).then((result: boolean) => {
+        return await this.cardsService.removeCard(card).then(async (result: boolean) => {
             if (result) {
-                let index = this._cards.map(a=>a.cardNumber).indexOf(card.cardNumber);
+                let item = this._cards.filter(a=>a.cardNumber == card.cardNumber)[0];
+                let index = this._cards.indexOf(item);
                 this._cards.splice(index, 1);
-                this.tasksProvider.refresh();
+                await this.tasksProvider.refresh();
             }
             return result;
         });

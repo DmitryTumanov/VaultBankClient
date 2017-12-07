@@ -242,5 +242,9 @@
   "editTaskTotalSumPlaceholder":{
     "EN": "Enter Task Total Sum",
     "RU": "Введите общую сумму"
+  },
+  "paused":{
+    "EN": "Paused",
+    "RU": "Приостановлено"
   }
 }
