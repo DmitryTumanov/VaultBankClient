@@ -54,6 +54,7 @@ import {TaskTypesComponent} from "./components/task-types/task-types.component";
 import {NewTaskStepOneComponent} from "./components/new-task/new-task-step-one.component";
 import {NewTaskStepTwoComponent} from "./components/new-task/new-task-step-two.component";
 import {TaskItemComponent} from "./components/tasks/task-item.component";
+import {ComingSoonComponent} from "./components/coming-soon/coming-soon.component";
 
 const appRoutes: Routes = [
     {path: '', component: LoginFirstStepComponent},
@@ -63,7 +64,11 @@ const appRoutes: Routes = [
     {path: 'new-task', component: NewTaskComponent},
     {path: 'login-second-step/:login', component: LoginSecondStepComponent},
     {path: 'login-third-step/:login/:email', component: LoginThirdStepComponent},
-    {path: 'login-key-step/:login', component: LoginKeyStepComponent}
+    {path: 'login-key-step/:login', component: LoginKeyStepComponent},
+    {path: 'settings', component: ComingSoonComponent},
+    {path: 'transactions', component: ComingSoonComponent},
+    {path: 'task-settings', component: ComingSoonComponent},
+    {path: 'card-settings', component: ComingSoonComponent},
 ];
 
 @NgModule({
@@ -105,7 +110,8 @@ const appRoutes: Routes = [
         TaskTypesComponent,
         NewTaskStepOneComponent,
         NewTaskStepTwoComponent,
-        TaskItemComponent
+        TaskItemComponent,
+        ComingSoonComponent
     ],
     bootstrap: [AppComponent],
     providers: [
