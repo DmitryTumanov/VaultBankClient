@@ -1,0 +1,12 @@
+<div id="modal" class="modal" materialize="modal" [materializeParams]="modalParams" [materializeActions]="modalAction">
+    <div class="modal-content">
+        <h4>{{translator.deleteTitleFirstPart}}{{card.customCardName}}{{translator.deleteTitleSecondPart}}</h4>
+        <p class="warning">
+            {{translator.deleteDescriptionFirstPart}}{{card.customCardName}}{{translator.deleteDescriptionSecondPart}}
+        </p>
+    </div>
+    <div class="modal-footer">
+        <a class="btn-flat cancel" (click)="closeModal()">{{translator.cancel}}</a>
+        <a class="modal-action modal-close btn-flat remove" (click)="removeCard()">{{translator.deleteTitle}}</a>
+    </div>
+</div>

@@ -1,0 +1,246 @@
+{
+  "test":{
+    "EN": "test",
+    "RU": "тест"
+  },
+  "cardNumber":{
+    "EN": "Enter Card Number",
+    "RU": "Введите номер карты"
+  },
+  "smallTask":{
+    "EN": "Small period",
+    "RU": "Малый период"
+  },
+  "mediumTask":{
+    "EN": "Middle period",
+    "RU": "Средний период"
+  },
+  "longTask":{
+    "EN": "Long period",
+    "RU": "Продолжительный период"
+  },
+  "smallTaskDescription":{
+    "EN": "Small period",
+    "RU": "Малый период"
+  },
+  "mediumTaskDescription":{
+    "EN": "Middle period",
+    "RU": "Средний период"
+  },
+  "longTaskDescription":{
+    "EN": "Long period",
+    "RU": "Продолжительный период"
+  },
+  "taskTypeButton":{
+    "EN": "Select",
+    "RU": "Выбрать"
+  },
+  "selectTaskType":{
+    "EN": "Select Task Type:",
+    "RU": "Выберите Тип Задачи:"
+  },
+  "selectedValue":{
+    "EN": "Selected",
+    "RU": "Выбрано"
+  },
+  "moneyTarget":{
+    "EN": "Selected",
+    "RU": "Требуемое количество средств"
+  },
+  "moneyCurrent":{
+    "EN": "Selected",
+    "RU": "Накопленные средства"
+  },
+  "moneyPerMonth":{
+    "EN": "Selected",
+    "RU": "Накопление в месяц"
+  },
+  "targetEnd":{
+    "EN": "Selected",
+    "RU": "Окончание задачи"
+  },
+  "targetType":{
+    "EN": "Selected",
+    "RU": "Выбранный тариф"
+  },
+  "creditCardName":{
+    "EN": "Selected",
+    "RU": "Имя кредитной карты"
+  },
+  "rangeLabel":{
+    "EN": "Selected",
+    "RU": "Выберите число месяца для снятия денег с карты"
+  },
+  "cardsPageTitle":{
+    "EN": "Selected",
+    "RU": "Ваши Кредитные Карты"
+  },
+  "tasksPageTitle":{
+    "EN": "Selected",
+    "RU": "Ваши текущие задачи и накопления"
+  },
+  "tasksPageEmptyTitle":{
+    "EN": "Selected",
+    "RU": "Вы еще не создали ни одной задачи."
+  },
+  "cardsPageEmptyTitle":{
+    "EN": "Selected",
+    "RU": "Вы еще не добавили ни одной кредитной карты."
+  },
+  "ownerTitle":{
+    "EN": "Selected",
+    "RU": "Владелец"
+  },
+  "deleteDescriptionFirstPart":{
+    "EN": "Do you really want to delete card \"",
+    "RU": "Вы уверены что хотите удалить карту \""
+  },
+  "deleteDescriptionSecondPart":{
+    "EN": "\"? All assigned tasks will be paused.",
+    "RU": "\"? Все закрепленные за данной картой задачи будут приостановлены."
+  },
+  "deleteTitleFirstPart":{
+    "EN": "Delete \"",
+    "RU": "Удаление карты \""
+  },
+  "deleteTitleSecondPart":{
+    "EN": "\" card",
+    "RU": "\""
+  },
+  "cancel":{
+    "EN": "Cancel",
+    "RU": "Отмена"
+  },
+  "delete":{
+    "EN": "Delete",
+    "RU": "Удалить"
+  },
+  "cardTypeSelector":{
+    "EN": "Choose your card",
+    "RU": "Выберите одну из карт"
+  },
+  "loginEnter":{
+    "EN": "Enter your login",
+    "RU": "Введите логин"
+  },
+  "passwordEnter":{
+    "EN": "Enter your password",
+    "RU": "Введите пароль"
+  },
+  "loginDisabledEnter":{
+    "EN": "Your login",
+    "RU": "Ваш логин"
+  },
+  "accessKeyEnter":{
+    "EN": "Enter your access key",
+    "RU": "Введите ваш код авторизации"
+  },
+  "loginNewEnter":{
+    "EN": "Enter your new password",
+    "RU": "Введите ваш новый пароль"
+  },
+  "confirmLoginNewEnter":{
+    "EN": "Confirm your new password",
+    "RU": "Подтвердите ваш новый пароль"
+  },
+  "emailEnter":{
+    "EN": "Enter your email",
+    "RU": "Введите имя вашей электронной почты"
+  },
+  "emailDisabledEnter":{
+    "EN": "Your email",
+    "RU": "Ваша электронная почта"
+  },
+  "settings":{
+    "EN": "Settings",
+    "RU": "Настройки"
+  },
+  "cardNamePlaceholder":{
+    "EN": "Enter Card Name",
+    "RU": "Введите имя карты"
+  },
+  "ownerNamePlaceholder":{
+    "EN": "Enter Owner Name",
+    "RU": "Введите имя владельца карты"
+  },
+  "cvvPlaceholder":{
+    "EN": "Enter CVV",
+    "RU": "Введите CVV карты"
+  },
+  "expirationDatePlaceholder":{
+    "EN": "Expiration Date",
+    "RU": "Введите дату окончания карты"
+  },
+  "confirm":{
+    "EN": "Confirm",
+    "RU": "Создать"
+  },
+  "newCardPageTitle":{
+    "EN": "Add new Credit Card",
+    "RU": "Добавление новой кредитной карты"
+  },
+  "newTaskPageTitle":{
+    "EN": "Add new Task",
+    "RU": "Добавление нового накопления"
+  },
+  "newTaskPageDescription":{
+    "EN": "Add new Task",
+    "RU": "На этой странице вы можете создать своё накопление, настроить его взаимодействие с вашими картами и календарем."
+  },
+  "newCardPageDescription":{
+    "EN": "Add new Task",
+    "RU": "На этой странице вы можете добавить свою кредитную карту, которая, в последующем, может быть использована для всяческих Ваших накоплений."
+  },
+  "firstStep":{
+    "EN": "First Step",
+    "RU": "Первый Шаг"
+  },
+  "firstStepDescription":{
+    "EN": "Fill some general info about new card!",
+    "RU": "Заполните базовую информацию о вашем новом накоплении!"
+  },
+  "secondStep":{
+    "EN": "Second Step",
+    "RU": "Второй Шаг"
+  },
+  "secondStepDescription":{
+    "EN": "Select task type and calculate your future money!",
+    "RU": "Выберите тариф и количество начислений для данного накопления!"
+  },
+  "thirdStep":{
+    "EN": "Third Step",
+    "RU": "Третий Шаг"
+  },
+  "thirdStepDescription":{
+    "EN": "Fill some additional info about task!",
+    "RU": "Заполните дополнительную информацию по карте!"
+  },
+  "back":{
+    "EN": "BACK",
+    "RU": "Назад"
+  },
+  "continue":{
+    "EN": "Continue",
+    "RU": "Продолжить"
+  },
+  "editTaskNamePlaceholder":{
+    "EN": "Enter Task Name",
+    "RU": "Введите имя накопления"
+  },
+  "editTaskDescriptionPlaceholder":{
+    "EN": "Enter Task Description",
+    "RU": "Введите описание накопления"
+  },
+  "editTaskEndPlaceholder":{
+    "EN": "Enter Task End Date",
+    "RU": "Введите дату окончания накопления"
+  },
+  "editTaskMonthSumPlaceholder":{
+    "EN": "Enter Task Month Sum",
+    "RU": "Введите сумму в месяц"
+  },
+  "editTaskTotalSumPlaceholder":{
+    "EN": "Enter Task Total Sum",
+    "RU": "Введите общую сумму"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "defaultLanguage": "RU",
+  "tokenKey": "token",
+  "userKey": "user",
+  "menuStateKey": "menuState",
+  "languageKey": "system_language",
+  "itemPauseImage": "item-pause.png",
+  "itemPlayImage": "item-play.png",
+  "defaultImage": "default.png",
+  "loaderImage": "loader.gif",
+  "mainIcon": "main-icon.png",
+  "mainLogo": "mainLogo.png",
+  "cardTypes": [
+    {
+      "typeKey": 0,
+      "image": "visa.png",
+      "smallImage": "visa_small.png"
+    },
+    {
+      "typeKey": 1,
+      "image": "mastercard.png",
+      "smallImage": "mastercard_small.png"
+    },
+    {
+      "typeKey": 2,
+      "image": "belcard.png",
+      "smallImage": "belcard_small.png"
+    }
+  ],
+  "taskTypes": [
+    {
+      "typeKey": 0,
+      "monthsNumber": 6,
+      "translateKey": "smallTask",
+      "color": "#5eff69",
+      "descriptionKey": "smallTaskDescription"
+    },
+    {
+      "typeKey": 1,
+      "monthsNumber": 24,
+      "translateKey": "mediumTask",
+      "color": "#fff135",
+      "descriptionKey": "mediumTaskDescription"
+    },
+    {
+      "typeKey": 2,
+      "monthsNumber": 60,
+      "translateKey": "longTask",
+      "color": "#ff3d3d",
+      "descriptionKey": "longTaskDescription"
+    }
+  ],
+  "paths":{
+    "mainPath":"http://localhost:50820/",
+    "authorizationPrefix":"auth",
+    "authorizationSecondStep":"auth/register/step-one",
+    "authorizationThirdStep":"auth/register/step-two",
+    "authorizationKeyStep":"auth/token",
+    "cardsPath": "cards",
+    "cardAddPath":"cards/add",
+    "cardRemovePath":"cards/delete",
+    "tasksPath": "goals",
+    "taskAddPath":"goals/add"
+  }
+}

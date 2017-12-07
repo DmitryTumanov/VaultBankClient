@@ -1,0 +1,65 @@
+<div class="container top-container new-card">
+    <form materialize class="creditCardForm">
+        <div class="heading">
+            <h5>{{translator.newCardPageTitle}}</h5>
+            <p>{{translator.newCardPageDescription}}</p>
+        </div>
+        <div class="payment">
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <input id="customCardName" type="text" class="validate"
+                           [formControl]="getControl('customCardName')">
+                    <label for="customCardName">{{translator.cardNamePlaceholder}}</label>
+                    <error-field [expression]="validateControl('customCardName')"
+                                 [text]="'Card Name required'"></error-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <input id="ownerFullName" type="text" class="validate"
+                           [formControl]="getControl('ownerFullName')">
+                    <label for="ownerFullName">{{translator.ownerNamePlaceholder}}</label>
+                    <error-field [expression]="validateControl('ownerFullName')"
+                                 [text]="'Owner Name required'"></error-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <input id="cardNumber" type="text" class="validate"
+                           [formControl]="getControl('cardNumber')">
+                    <label for="cardNumber">{{translator.cardNumber}}</label>
+                    <error-field [expression]="validateControl('cardNumber')"
+                                 [text]="'Card Number required'"></error-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <input id="CVV" type="text" class="validate"
+                           [formControl]="getControl('CVV')">
+                    <label for="CVV">{{translator.cvvPlaceholder}}</label>
+                    <error-field [expression]="validateControl('CVV')"
+                                 [text]="'CVV required'"></error-field>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <input id="expirationDate" type="text" class="validate"
+                           [formControl]="getControl('expirationDate')">
+                    <label for="expirationDate">{{translator.expirationDatePlaceholder}}</label>
+                    <error-field [expression]="validateControl('expirationDate')"
+                                 [text]="'Expiration Date required'"></error-field>
+                </div>
+            </div>
+            <div class="row">
+                <card-types (cardTypeChange)="updateCardType($event)"></card-types>
+            </div>
+            <div *ngIf="fatalError">
+                <p>{{fatalError}}</p>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default confirm right" id="confirm-purchase" [disabled]="validator.invalid"
+                        (click)="addNewCard()">{{translator.confirm}}
+                </button>
+                <button class="waves-effect waves-dark btn-flat" routerLink="/cards">{{translator.cancel}}</button>
+            </div>
+        </div>
+    </form>
+</div>

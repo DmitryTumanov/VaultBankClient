@@ -1,0 +1,4 @@
+<div class="input-field credit_cards_selector col s12 m12 l12">
+    <img [src]="'images/'+cardType.smallImage" [id]="cardType.typeKey" *ngFor="let cardType of cardTypes"
+         [ngClass]="{'active-card-type':isCardTypeActive(cardType.typeKey)}" (click)="updateCardType(cardType.typeKey)">
+</div>

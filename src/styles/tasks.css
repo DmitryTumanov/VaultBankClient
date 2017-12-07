@@ -1,0 +1,93 @@
+div.tasks {
+    padding-top: 20px;
+}
+
+div.tasks > div.task .card {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+div.tasks > div.task .card > .card-stacked > .card-content > .header {
+    margin-top: 0;
+}
+
+div.tasks > div.task .card > .card-image {
+    max-width: 20%;
+}
+
+div.tasks > div.task .card > .card-image img {
+    width: 100%;
+    height: 100%;
+}
+
+div.tasks > div.task .card > .card-stacked > .card-action {
+    height: 35px;
+    padding: 0;
+}
+
+div.tasks > div.task .card > .card-stacked > .card-content > p {
+    color: #b6b6b9;
+}
+
+div.tasks > div.task .card > .card-stacked > .card-action > progress {
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+    border: 0;
+}
+
+div.tasks > div.task .card > .card-stacked > .card-action > span.progress-title {
+    top: -105%;
+    position: relative;
+    font-weight: 600;
+    color: white;
+    display: block;
+    left: 0;
+    text-align: center;
+    cursor: default;
+}
+
+div.tasks > div.task .card > .card-stacked > .card-action > span.progress-title.value {
+    display: none;
+}
+
+div.tasks > div.task .card > .card-stacked > .card-action:hover .progress-title.value{
+    display: block;
+}
+
+div.tasks > div.task .card > .card-stacked > .card-action:hover .progress-title.percent{
+    display: none;
+}
+
+div.tasks > div.task .card > .card-stacked > .card-action > progress::-webkit-progress-bar {
+    background-color: #dedee1;
+}
+
+div.tasks > div.task .card > .card-stacked > .card-action > progress::-webkit-progress-value {
+    background-color: #b6b6b9;
+}
+
+div.tasks > div.task .card > .card-stacked > .card-action > progress.red::-webkit-progress-value {
+    background-color: rgba(222, 41, 40, 0.7);
+}
+
+div.tasks > div.task .card > .card-stacked > .card-action > progress.blue::-webkit-progress-value {
+    background-color: rgba(0, 71, 212, 0.62);
+}
+
+div.tasks > div.task .card > .card-stacked > .card-action > progress.green::-webkit-progress-value {
+    background-color: rgba(60, 224, 0, 0.64);
+}
+
+div.tasks > div.search .input-field i.search{
+    line-height: 55px;
+}
+
+div.tasks > div.search .input-field {
+    width: 70%;
+    margin: 0 auto;
+}
+
+div.tasks > div.search .input-field input{
+    margin-bottom: 0;
+}

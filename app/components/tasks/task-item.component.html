@@ -1,0 +1,70 @@
+<li class="collection-item avatar" [ngClass]="{'paused': task.isPaused, 'full': isFull}">
+    <div class="content">
+        <div class="before" [style.width.%]="getTaskPercents()"></div>
+        <img [src]="'images/'+getTaskImage()" class="circle">
+        <span class="title">{{task.title}}</span>
+        <p>{{task.description}}</p>
+        <div class="row task-content" *ngIf="isFull">
+            <div class="col m12 m6 l6">
+                <div class="row">
+                    <div class="col s6 m6 l6 task-key">
+                        {{translator.moneyTarget}}
+                    </div>
+                    <div class="col s6 m6 l6 task-value">
+                        :<span>{{task.moneyTarget}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 m6 l6 task-key">
+                        {{translator.moneyCurrent}}
+                    </div>
+                    <div class="col s6 m6 l6 task-value">
+                        :<span>{{task.moneyCurrent}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 m6 l6 task-key">
+                        {{translator.moneyPerMonth}}
+                    </div>
+                    <div class="col s6 m6 l6 task-value">
+                        :<span>{{task.moneyPerMonth}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col m12 m6 l6">
+                <div class="row">
+                    <div class="col s6 m6 l6 task-key">
+                        {{translator.targetEnd}}
+                    </div>
+                    <div class="col s6 m6 l6 task-value">
+                        :<span>{{task.targetEnd | date: 'dd/MM/yyyy'}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 m6 l6 task-key">
+                        {{translator.targetType}}
+                    </div>
+                    <div class="col s6 m6 l6 task-value">
+                        :<span [style.color]="taskType.color">{{translator[taskType.translateKey]}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 m6 l6 task-key">
+                        {{translator.creditCardName}}
+                    </div>
+                    <div class="col s6 m6 l6 task-value">
+                        :<span *ngIf="!!card">{{card.customCardName}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="secondary-content"><i class="material-icons">settings</i></a>
+        <a class="height-trigger" (click)="triggerHeight()"
+           *ngIf="!isFull"><i class="material-icons">keyboard_arrow_down</i></a>
+        <a class="height-trigger" (click)="triggerHeight()"
+           *ngIf="isFull"><i class="material-icons">keyboard_arrow_up</i></a>
+        <div class="after" [style.width.%]="100 - getTaskPercents()"></div>
+    </div>
+    <div class="task-avg-value" *ngIf="isFull">{{getTaskPercents()}}%</div>
+    <div class="task-pause">Paused</div>
+</li>

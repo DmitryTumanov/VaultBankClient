@@ -1,0 +1,27 @@
+<div class="col m12 s12 l12">
+    <div class="card horizontal" [ngClass]="{'paused':card.isPaused}">
+        <div class="card-image">
+            <img [src]="'images/'+getCardImage(card.cardType)">
+        </div>
+        <div class="card-stacked">
+            <div class="card-content">
+                <div class="header">
+                    <h5 class="card-name">{{card.customCardName}}</h5>
+                </div>
+                <p>{{translator.ownerTitle}}: {{card.ownerFullName}}</p>
+                <div class="item-settings">
+                    <i class="material-icons">settings</i>
+                </div>
+            </div>
+            <div class="card-action">
+                <a class="settings">Номер карты: {{card.cardNumber}}</a>
+                <a class="remove" (click)="removeCard()">Удалить карту</a>
+            </div>
+        </div>
+        <div class="item-pause-banner">
+            <img [src]="'images/'+settings.itemPauseImage" class="pause-button">
+            <img [src]="'images/'+settings.itemPlayImage" class="play-button">
+        </div>
+    </div>
+</div>
+<card-remove-confirm [card]="card" [modalAction]="modalAction"></card-remove-confirm>

@@ -1,0 +1,67 @@
+import {Injectable} from "@angular/core";
+import {BaseTranslationsProvider} from "./base.translations.provider";
+
+@Injectable()
+export class TranslationsProvider extends BaseTranslationsProvider{
+    get test(){ return this.get("test");}
+    get cardNumber(){ return this.get("cardNumber");}
+    get smallTask(){ return this.get("smallTask");}
+    get mediumTask(){ return this.get("mediumTask");}
+    get longTask(){ return this.get("longTask");}
+    get smallTaskDescription(){ return this.get("smallTaskDescription");}
+    get mediumTaskDescription(){ return this.get("mediumTaskDescription");}
+    get longTaskDescription(){ return this.get("longTaskDescription");}
+    get taskTypeButton(){ return this.get("taskTypeButton");}
+    get selectTaskType(){ return this.get("selectTaskType");}
+    get selectedValue(){ return this.get("selectedValue");}
+    get moneyTarget(){ return this.get("moneyTarget");}
+    get moneyCurrent(){ return this.get("moneyCurrent");}
+    get moneyPerMonth(){ return this.get("moneyPerMonth");}
+    get targetEnd(){ return this.get("targetEnd");}
+    get targetType(){ return this.get("targetType");}
+    get creditCardName(){ return this.get("creditCardName");}
+    get rangeLabel(){ return this.get("rangeLabel");}
+    get cardsPageTitle(){ return this.get("cardsPageTitle");}
+    get tasksPageTitle(){ return this.get("tasksPageTitle");}
+    get tasksPageEmptyTitle(){ return this.get("tasksPageEmptyTitle");}
+    get cardsPageEmptyTitle(){ return this.get("cardsPageEmptyTitle");}
+    get ownerTitle(){ return this.get("ownerTitle");}
+    get deleteDescriptionFirstPart(){ return this.get("deleteDescriptionFirstPart");}
+    get deleteDescriptionSecondPart(){ return this.get("deleteDescriptionSecondPart");}
+    get deleteTitleFirstPart(){ return this.get("deleteTitleFirstPart");}
+    get deleteTitleSecondPart(){ return this.get("deleteTitleSecondPart");}
+    get cancel(){ return this.get("cancel");}
+    get deleteTitle(){ return this.get("delete");}
+    get settingsTitle(){ return this.get("settings");}
+    get cardTypeSelector(){ return this.get("cardTypeSelector");}
+    get loginEnter(){ return this.get("loginEnter");}
+    get passwordEnter(){ return this.get("passwordEnter");}
+    get loginDisabledEnter(){ return this.get("loginDisabledEnter");}
+    get accessKeyEnter(){ return this.get("accessKeyEnter");}
+    get loginNewEnter(){ return this.get("loginNewEnter");}
+    get confirmLoginNewEnter(){ return this.get("confirmLoginNewEnter");}
+    get emailEnter(){ return this.get("emailEnter");}
+    get emailDisabledEnter(){ return this.get("emailDisabledEnter");}
+    get cardNamePlaceholder(){ return this.get("cardNamePlaceholder");}
+    get ownerNamePlaceholder(){ return this.get("ownerNamePlaceholder");}
+    get cvvPlaceholder(){ return this.get("cvvPlaceholder");}
+    get expirationDatePlaceholder(){ return this.get("expirationDatePlaceholder");}
+    get confirm(){ return this.get("confirm");}
+    get newCardPageTitle(){ return this.get("newCardPageTitle");}
+    get newTaskPageTitle(){ return this.get("newTaskPageTitle");}
+    get newTaskPageDescription(){ return this.get("newTaskPageDescription");}
+    get newCardPageDescription(){ return this.get("newCardPageDescription");}
+    get firstStep(){ return this.get("firstStep");}
+    get firstStepDescription(){ return this.get("firstStepDescription");}
+    get secondStep(){ return this.get("secondStep");}
+    get secondStepDescription(){ return this.get("secondStepDescription");}
+    get thirdStep(){ return this.get("thirdStep");}
+    get thirdStepDescription(){ return this.get("thirdStepDescription");}
+    get back(){ return this.get("back");}
+    get continue(){ return this.get("continue");}
+    get editTaskNamePlaceholder(){ return this.get("editTaskNamePlaceholder");}
+    get editTaskDescriptionPlaceholder(){ return this.get("editTaskDescriptionPlaceholder");}
+    get editTaskEndPlaceholder(){ return this.get("editTaskEndPlaceholder");}
+    get editTaskMonthSumPlaceholder(){ return this.get("editTaskMonthSumPlaceholder");}
+    get editTaskTotalSumPlaceholder(){ return this.get("editTaskTotalSumPlaceholder");}
+}

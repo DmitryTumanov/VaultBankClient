@@ -1,0 +1,173 @@
+body {
+    color: #69B4FD;
+}
+
+.main-container.full .colored {
+    background: rgba(23, 146, 255, 0.55);
+    background: linear-gradient(to right, #95CBFF, #f2fcfe);
+}
+
+.main-container .colored {
+    background: linear-gradient(to right, #95CBFF, #f2fcfe);
+}
+
+textarea.valid,
+input.valid {
+    border-bottom: 1px solid #d0d234 !important;
+    box-shadow: 0 1px 0 0 #d0d234 !important;
+}
+
+textarea:focus:not([readonly]),
+input:focus:not([readonly]) {
+    border-bottom: 1px solid #bbbd30 !important;
+    box-shadow: 0 1px 0 0 #bbbd30 !important;
+}
+
+textarea:focus:not([readonly]) + label,
+input:focus:not([readonly]) + label {
+    color: #bbbd30 !important;
+}
+
+div.main-container .login-container form {
+    border-color: #e3e3e3;
+    background-color: #FFFFFF;
+}
+
+nav.main-nav {
+    color: #69B4FD;
+    background-color: #FFFFFF !important;
+}
+
+.collection .collection-item {
+    background-color: #FFFFFF;
+}
+
+nav.main-nav div.col.menu .collection .collection-item p.description {
+    color: #bbbd30;
+}
+
+nav.main-nav div.col.menu .collection .collection-item:hover {
+    background-color: #eeeeee;
+}
+
+footer.page-footer {
+    background-color: #69B4FD;
+}
+
+p.description {
+    color: #7eafe1;
+    text-align: center;
+}
+
+.card .card-action a,
+.card .card-action a:hover {
+    color: #607dbf !important;
+}
+
+a.remove,
+div.cards > div.plastic-card div.card-action > a.remove {
+    color: #ff331f !important;
+}
+
+div.card:hover:not(.paused) div.item-settings {
+    color: #b6b6b9;
+}
+
+div.card:hover:not(.paused) div.item-settings:hover {
+    color: #607dbf;
+}
+
+.btn-floating.btn-large {
+    background-color: #b6b6b9;
+}
+
+.btn-floating.btn-large:hover {
+    background-color: #607dbf;
+}
+
+div.cards > div.plastic-card .card > .card-stacked > .card-content > p {
+    color: #bbbd30;
+}
+
+p.warning {
+    color: #b6b6b9;
+}
+
+button.btn.btn-default {
+    color: #ffffff;
+    background-color: #bbbd30;
+}
+
+button.btn-flat{
+    color: #bbbd30;
+}
+
+button.btn.btn-default.confirm {
+    color: #ffffff !important;
+    background-color: #2196F3 !important
+}
+
+button.btn.btn-default.confirm[disabled] {
+    background-color: #DFDFDF !important;
+    color: #9F9F9F !important;
+}
+
+.picker__date-display {
+    background-color: #2196F3 !important;
+}
+
+div.alert {
+    background-color: rgba(255, 0, 3, 0.15);
+    border: 1px solid rgba(255, 0, 3, 0.68);
+}
+
+.task-type-selector ul.collapsible li.inactive,
+.task-type-selector ul.collapsible li.inactive .material-icons{
+    color: #b6b6b9 !important;
+}
+
+li.collection-item p{
+    color: #bbbd30;
+}
+
+li.collection-item .content .material-icons{
+    color: #607dbf;
+}
+
+li.collection-item .after{
+    background: rgba(104, 104, 104, 0.14);
+}
+
+li.collection-item .before{
+    background: rgba(60, 224, 0, 0.41);
+}
+
+li.collection-item.paused div.task-pause{
+    color: #ff331f;
+}
+
+.task-key{
+    color: #9F9F9F;
+}
+
+.task-value{
+    color: #9F9F9F;
+}
+
+.task-value span{
+    color: #2196F3;
+}
+
+.heading p{
+    color: #bbbd30;
+}
+
+p.description span.yellow{
+    color: #bbbd30 !important;
+    background-color: transparent !important;
+}
+
+p.description span.blue{
+    color: rgba(0, 8, 180, 0.85) !important;
+    background-color: transparent !important;
+}

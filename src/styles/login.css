@@ -1,0 +1,22 @@
+div.main-container .login-container {
+    width: 35%;
+    padding: 5% 0;
+    text-align: center;
+}
+
+div.main-container .login-container form {
+    border: 1px solid;
+    padding: 20px;
+}
+
+div.main-container .login-container > .row {
+    margin: auto auto 10px auto;
+    box-shadow: 0 0 15px #bfbfbf;
+    max-width: 400px;
+}
+
+div.main-container .login-container form img.circle {
+    height: 170px;
+    width: 170px;
+    box-shadow: 3px 3px 5px #a9a9a9;
+}

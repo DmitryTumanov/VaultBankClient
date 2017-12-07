@@ -1,0 +1,13 @@
+<div class="input-field col s12 m6 l6">
+    <select name="singleSelect" [ngModel]="cards" materialize="material_select"
+            (change)="updateCard($event)">
+        <option value="" disabled selected>{{translator.cardTypeSelector}}</option>
+        <option *ngFor="let card of cards"
+                [attr.data-icon]="'images/'+getCardImage(card.cardType)"
+                class="left"
+                [value]="card.creditCardId">
+            {{card.customCardName.trim()}}
+        </option>
+    </select>
+    <label>Select Card</label>
+</div>

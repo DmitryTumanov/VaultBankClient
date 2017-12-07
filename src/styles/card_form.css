@@ -1,0 +1,18 @@
+.new-card{
+    padding: 70px;
+}
+
+.new-card .creditCardForm{
+    max-width: 700px;
+    padding: 15px;
+    background-color: white;
+    margin: auto;
+}
+
+.new-card .creditCardForm .heading h3{
+    text-align: center;
+}
+
+.new-card .creditCardForm .credit_cards_selector img{
+    margin: 0 5px;
+}

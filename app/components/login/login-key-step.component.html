@@ -1,0 +1,37 @@
+<div class="container top-container login-container">
+    <div class="row">
+        <form class="col s12" method="post">
+            <div class='row'>
+                <div class='col s12'>
+                    <img [src]="'images/'+settings.mainIcon" class="circle">
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col s12'>
+                    <h5>Вам на почту было выслано письмо</h5>
+                    <p class="description">В данном письме будет код авторизации, который нужно ввести в поле ниже,
+                        чтобы попасть в приложение.</p>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='input-field col s12'>
+                    <input disabled class='validate' [value]="model.login" type="text" name='login' id='login'/>
+                    <label for='login' class="active">{{translator.loginDisabledEnter}}</label>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='input-field col s12'>
+                    <input class='validate' type='text' name='password' id='password' [(ngModel)]="model.accessKey"/>
+                    <label for='password'>{{translator.accessKeyEnter}}</label>
+                </div>
+            </div>
+            <error-field [expression]="fatalError" [text]="fatalError"></error-field>
+            <br/>
+            <div class='row'>
+                <button name='btn_login' class='col s12 btn btn-large waves-effect blue' (click)="login()">
+                    <i class="material-icons">done</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

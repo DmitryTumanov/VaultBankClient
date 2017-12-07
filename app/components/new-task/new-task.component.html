@@ -1,0 +1,66 @@
+<div class="container top-container new-card">
+    <form materialize class="creditCardForm">
+        <div class="heading">
+            <h5>{{translator.newTaskPageTitle}}</h5>
+            <p>{{translator.newTaskPageDescription}}</p>
+        </div>
+        <ul class="stepper linear">
+            <li class="step active" [ngClass]="{'wrong':!isValid(firstStepValidator)&&isTouched(firstStepValidator)}">
+                <div class="step-title"
+                     [attr.data-step-label]="translator.firstStepDescription">{{translator.firstStep}}
+                </div>
+                <div class="step-content">
+                    <new-task-step-one [(val)]="firstStepValidator"></new-task-step-one>
+                    <div class="step-actions">
+                        <button class="waves-effect btn blue next-step right"
+                                [disabled]="!(isValid(firstStepValidator)&&isTouched(firstStepValidator))">
+                            {{translator.continue}}
+                        </button>
+                    </div>
+                </div>
+            </li>
+            <li class="step" [ngClass]="{'wrong':!isValid(secondStepValidator)&&
+                                         isTouched(secondStepValidator, 'targetEnd')}">
+                <div class="step-title"
+                     [attr.data-step-label]="translator.secondStepDescription">{{translator.secondStep}}
+                </div>
+                <div class="step-content">
+                    <new-task-step-two [(val)]="secondStepValidator"
+                                       [targetEnd]="firstStepValidator.value.targetEnd"></new-task-step-two>
+                    <div class="step-actions">
+                        <button class="waves-effect btn-flat previous-step">BACK</button>
+                        <button class="waves-effect btn blue next-step right"
+                                [disabled]="!(isValid(secondStepValidator)&&isTouched(secondStepValidator))">
+                            {{translator.continue}}
+                        </button>
+                    </div>
+                </div>
+            </li>
+            <li class="step">
+                <div class="step-title"
+                     [attr.data-step-label]="translator.thirdStepDescription">{{translator.thirdStep}}
+                </div>
+                <div class="step-content">
+                    <p class="range-field">
+                        <input type="range" id="range" min="1" max="28"
+                               [formControl]="thirdStepValidator.controls['title']"/>
+                        <label for="range">{{translator.rangeLabel}}</label>
+                    </p>
+                    <div class="step-actions">
+                        <button class="waves-effect btn-flat previous-step">{{translator.back}}</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div *ngIf="fatalError">
+            <p>{{fatalError}}</p>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-default confirm" id="confirm-purchase"
+                    [disabled]="!isValid(firstStepValidator) || !isValid(secondStepValidator)"
+                    (click)="addNewTask()">{{translator.confirm}}
+            </button>
+            <button class="waves-effect waves-dark btn-flat" routerLink="/tasks">{{translator.cancel}}</button>
+        </div>
+    </form>
+</div>

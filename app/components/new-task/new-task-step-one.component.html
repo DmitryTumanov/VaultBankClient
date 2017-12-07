@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="input-field col s12 m12 l12">
+        <input id="customCardName" type="text" class="validate"
+               [formControl]="getControl('title')">
+        <label for="customCardName">{{translator.editTaskNamePlaceholder}}</label>
+        <error-field [expression]="validateControl('title')"
+                     [text]="'Task Name required'"></error-field>
+    </div>
+</div>
+<div class="row textarea">
+    <div class="input-field col s12 m12 l12">
+                <textarea id="ownerFullName" class="validate materialize-textarea"
+                          [formControl]="getControl('description')"></textarea>
+        <label for="ownerFullName">{{translator.editTaskDescriptionPlaceholder}}</label>
+    </div>
+</div>
+<div class="row">
+    <cards-selector (cardChange)="updateTaskCard($event)"></cards-selector>
+    <div class="input-field col s12 m6 l6">
+        <input id="date" type="text" name="endDate"
+               [formControl]="getControl('targetEnd')"
+               materialize="pickadate"
+               [materializeParams]="pickerFormat">
+        <label for="date">{{translator.editTaskEndPlaceholder}}</label>
+        <error-field [expression]="validateControl('targetEnd')"
+                     [text]="'Task End Date required'"></error-field>
+    </div>
+</div>

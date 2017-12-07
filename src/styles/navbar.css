@@ -1,0 +1,184 @@
+nav.main-nav {
+    position: fixed;
+    width: 20%;
+    height: 100%;
+}
+
+nav.main-nav div.col.menu {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+nav.main-nav div.col.menu .collection {
+    margin-top: 30px;
+    border: 0;
+}
+
+nav.main-nav div.col.menu .collection .collection-item {
+    width: 100%;
+    line-height: 20px;
+    padding-top: 5px;
+    padding-bottom: 0;
+    min-height: 55px;
+    border: 0;
+    cursor: pointer;
+    margin: 7px 0;
+}
+
+nav.main-nav div.col.menu .collection .collection-item p.description {
+    font-size: 12px;
+    text-align: start;
+}
+
+nav.main-nav div.col.menu .collection .collection-item i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 40px;
+    padding: 0 15px;
+    line-height: 50px;
+}
+
+nav.main-nav.shrink div.col.menu .collection .collection-item i{
+    width: 100%;
+    text-align: center;
+}
+
+nav.main-nav div.col.footer {
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+}
+
+nav.main-nav div.col.footer .settings {
+    display: flex;
+    width: 100%;
+    max-height: 55px;
+    cursor: pointer;
+}
+
+nav.main-nav div.col.footer .settings:hover {
+    background-color: #e3e3e3;
+}
+
+nav.main-nav div.col.footer .settings i {
+    font-size: 40px;
+    padding: 0 15px;
+    line-height: 55px;
+}
+
+nav.main-nav div.col.footer .settings span.title {
+    font-size: 16px;
+    line-height: 55px;
+}
+
+nav.main-nav div.col.user-card {
+    padding: 0;
+}
+
+nav.main-nav div.col.user-card > .card {
+    margin: 0;
+}
+
+nav.main-nav div.col.user-card > .card > .card-content {
+    padding: 12px;
+}
+
+nav.main-nav div.col.user-card > .card > .card-image .card-title {
+    padding-bottom: 0;
+}
+
+nav.main-nav div.col.user-card > .card > .card-image i {
+    line-height: 40px;
+}
+
+nav.main-nav > div.shrink-button {
+    cursor: pointer;
+    width: 100%;
+}
+
+nav.main-nav > div.shrink-button img{
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+}
+
+nav.main-nav.shrink div.col.user-card > .card > .card-image {
+    margin: 40px 0 0 0;
+}
+
+nav.main-nav.shrink div.col.menu .collection .collection-item {
+    padding: 0;
+}
+
+nav.main-nav.shrink div.col.menu .collection .collection-item p.description,
+nav.main-nav.shrink div.col.menu .collection .collection-item span.title {
+    display: none;
+}
+
+nav.main-nav.shrink div.col.user-card > .card {
+    box-shadow: none;
+}
+
+nav.main-nav.shrink div.col.user-card > .card > .card-image i {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin: auto;
+    box-shadow: 2px 2px 5px;
+}
+
+nav.main-nav.shrink div.col.user-card > .card > .card-image .card-title {
+    display: none;
+}
+
+nav.main-nav.shrink div.col.user-card > .card > .card-image a {
+    width: 20px;
+    height: 20px;
+    bottom: -3px;
+    right: 15px;
+}
+
+nav.main-nav.shrink div.col.user-card > .card > .card-image i {
+    line-height: 20px;
+    font-size: 15px;
+}
+
+nav.main-nav.shrink div.col.footer .settings i {
+    margin: auto;
+}
+
+nav.main-nav.shrink div.col.footer .settings span.title {
+    display: none;
+}
+
+nav.main-nav.hidden{
+    display: none;
+}
+
+div.main-container.full,
+div.main-container.full div.pre-loader{
+    width: 100%;
+}
+
+nav.main-nav.shrink{
+    width: 7%;
+}
+
+div.main-container.shrink,
+div.main-container.shrink div.pre-loader{
+    width: 93%;
+}
+
+nav.main-nav,
+nav.main-nav.block{
+    width: 20%;
+}
+
+div.main-container,
+div.main-container div.pre-loader,
+div.main-container.block,
+div.main-container.block div.pre-loader{
+    width: 80%;
+}

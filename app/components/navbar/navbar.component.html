@@ -1,0 +1,29 @@
+<nav class="main-nav white" [ngClass]="getNavbarState()">
+    <div class="shrink-button">
+        <img [src]="'images/'+settings.mainLogo" (click)="shrinkMenu()">
+    </div>
+    <div class="row">
+        <div class="col s12 m12 l12 menu">
+            <div class="collection">
+                <div class="collection-item avatar" routerLink="/cards">
+                    <i class="material-icons">credit_card</i>
+                    <span class="title">Мои Карты</span>
+                    <p class="description">Управление вашими картами</p>
+                </div>
+                <div class="collection-item avatar" routerLink="/tasks">
+                    <i class="material-icons">content_paste</i>
+                    <span class="title">Мои Задачи</span>
+                    <p class="description">Управление вашими накоплениями</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m12 l12 footer">
+            <div class="settings">
+                <i class="material-icons">settings</i>
+                <span class="title">{{translator.settingsTitle}}</span>
+            </div>
+        </div>
+    </div>
+</nav>

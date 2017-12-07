@@ -1,0 +1,31 @@
+<div class="input-field task-type-selector col s12 m12 l12">
+    <h6>{{translator.selectTaskType}}</h6>
+    <ul materialize="collapsible" class="collapsible" data-collapsible="accordion">
+        <li *ngFor="let taskType of taskTypes"
+            [ngClass]="{'inactive': monthDiff(getCurrentTime(), endDate) < taskType.monthsNumber}">
+            <div class="collapsible-header">
+                <i class="material-icons" [style.color]="taskType.color"
+                   *ngIf="!isTaskTypeActive(taskType.typeKey)">fiber_manual_record</i>
+                <i class="material-icons" [style.color]="taskType.color"
+                   *ngIf="isTaskTypeActive(taskType.typeKey)">done</i>
+
+                <span [style.color]="taskType.color" *ngIf="isTaskTypeActive(taskType.typeKey)">
+                    {{translator[taskType.translateKey]}}
+                </span>
+                <span *ngIf="!isTaskTypeActive(taskType.typeKey)">
+                    {{translator[taskType.translateKey]}}
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <p>{{translator[taskType.descriptionKey]}}</p>
+                <button class="btn btn-default confirm-task-type" [style.background]="taskType.color"
+                        (click)="updateTaskType(taskType.typeKey)" *ngIf="!isTaskTypeActive(taskType.typeKey)">
+                    {{translator.taskTypeButton}} {{translator[taskType.translateKey]}}?
+                </button>
+                <button class="btn btn-default confirm-task-type" disabled *ngIf="isTaskTypeActive(taskType.typeKey)">
+                    {{translator.selectedValue}}
+                </button>
+            </div>
+        </li>
+    </ul>
+</div>
