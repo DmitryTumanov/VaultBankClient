@@ -289,7 +289,7 @@ div.card.paused:hover .card-stacked {
 }
 
 div.main-container .top-container {
-    min-height: 900px;
+    min-height: 800px;
 }
 
 div.main-container .empty {
@@ -469,6 +469,10 @@ li.collection-item.paused div.task-pause{
     font-size: x-large;
 }
 
+li.collection-item.paused div.task-pause span{
+    cursor: pointer;
+}
+
 a.height-trigger{
     position: absolute;
     width: 100%;
@@ -552,5 +556,12 @@ ul.collection li.collection-item.avatar.full{
 
 .heading h5,
 .heading p{
+    text-align: center;
+}
+
+.top-container.coming-soon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
 }

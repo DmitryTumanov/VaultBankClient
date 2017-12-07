@@ -171,3 +171,8 @@ p.description span.blue{
     color: rgba(0, 8, 180, 0.85) !important;
     background-color: transparent !important;
 }
+
+
+.top-container.coming-soon h5{
+    color: #9F9F9F;
+}

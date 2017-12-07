@@ -29,6 +29,8 @@ nav.main-nav div.col.menu .collection .collection-item {
 nav.main-nav div.col.menu .collection .collection-item p.description {
     font-size: 12px;
     text-align: start;
+    line-height: 15px;
+    padding-top: 5px;
 }
 
 nav.main-nav div.col.menu .collection .collection-item i {
