@@ -12,6 +12,7 @@ import {SettingsProvider} from "../../providers/settings/settings.provider";
 })
 export class CardsComponent extends BaseComponent implements OnInit {
     public cards: CardModel[];
+    public searchValue: string = "";
 
     constructor(settings: SettingsProvider,
                 translations: TranslationsProvider,
@@ -24,5 +25,13 @@ export class CardsComponent extends BaseComponent implements OnInit {
         this.preLoader.start();
         this.cards = await this.cardProvider.getCards();
         this.preLoader.stop();
+    }
+
+    getFilteredCards(): CardModel[] {
+        if (!this.searchValue) {
+            return this.cards;
+        }
+        return this.cards.filter(x => x.customCardName.toUpperCase()
+            .indexOf(this.searchValue.toUpperCase()) != -1);
     }
 }

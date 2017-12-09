@@ -4,18 +4,19 @@
             <div class="col s12">
                 <div class="input-field">
                     <i class="material-icons prefix search">search</i>
-                    <input id="search-field">
+                    <input id="search-field" [(ngModel)]="searchValue">
                 </div>
             </div>
         </div>
     </div>
     <h5>{{translator.cardsPageTitle}}</h5>
-    <div class="plastic-card" *ngFor="let card of cards">
+    <div class="plastic-card" *ngFor="let card of getFilteredCards()">
         <card-item [card]="card"></card-item>
     </div>
-    <div *ngIf="cards == undefined || cards.length == 0">
+    <div *ngIf="getFilteredCards() == undefined || getFilteredCards().length == 0">
         <div class="empty">
-            <h5>{{translator.cardsPageEmptyTitle}}</h5>
+            <h5 *ngIf="!searchValue">{{translator.cardsPageEmptyTitle}}</h5>
+            <h5 *ngIf="searchValue">{{translator.cardsFilterEmpty}}</h5>
         </div>
     </div>
 </div>

@@ -4,18 +4,20 @@
             <div class="col s12">
                 <div class="input-field">
                     <i class="material-icons prefix search">search</i>
-                    <input id="search-field">
+                    <input id="search-field" [(ngModel)]="searchValue">
                 </div>
             </div>
         </div>
     </div>
     <h5>{{translator.tasksPageTitle}}</h5>
     <ul class="collection">
-        <task-item [card]="getCardForTask(task.creditCardId)" *ngFor="let task of tasks" [task]="task"></task-item>
+        <task-item [card]="getCardForTask(task.creditCardId)" *ngFor="let task of getFilteredTasks()"
+                   [task]="task"></task-item>
     </ul>
-    <div *ngIf="tasks == undefined || tasks.length == 0">
+    <div *ngIf="getFilteredTasks() == undefined || getFilteredTasks().length == 0">
         <div class="empty">
-            <h5>{{translator.tasksPageEmptyTitle}}</h5>
+            <h5 *ngIf="!searchValue">{{translator.tasksPageEmptyTitle}}</h5>
+            <h5 *ngIf="searchValue">{{translator.tasksFilterEmpty}}</h5>
         </div>
     </div>
 </div>

@@ -36,6 +36,7 @@ div.main-container .login-container form {
 nav.main-nav {
     color: #69B4FD;
     background-color: #FFFFFF !important;
+    box-shadow: 0 0 16px 0 #b6b6b9;
 }
 
 .collection .collection-item {

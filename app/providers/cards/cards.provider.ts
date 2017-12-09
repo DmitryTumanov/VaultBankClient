@@ -36,7 +36,7 @@ export class CardsProvider {
     async removeCard(card: CardModel) {
         return await this.cardsService.removeCard(card).then(async (result: boolean) => {
             if (result) {
-                let item = this._cards.filter(a=>a.cardNumber == card.cardNumber)[0];
+                let item = this._cards.filter(a=>a.customCardName == card.customCardName)[0];
                 let index = this._cards.indexOf(item);
                 this._cards.splice(index, 1);
                 await this.tasksProvider.refresh();

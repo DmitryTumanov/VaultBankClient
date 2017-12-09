@@ -565,3 +565,9 @@ ul.collection li.collection-item.avatar.full{
     justify-content: center;
     text-align: center;
 }
+
+.credit_cards_selector{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

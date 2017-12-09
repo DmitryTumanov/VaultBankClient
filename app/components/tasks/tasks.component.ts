@@ -14,6 +14,7 @@ import {CardModel} from "../../models/card.model";
 export class TasksComponent extends BaseComponent implements OnInit {
     public tasks: TaskModel[] = [];
     public cards: CardModel[] = [];
+    public searchValue: string = "";
 
     constructor(settings: SettingsProvider,
                 translator: TranslationsProvider,
@@ -32,5 +33,13 @@ export class TasksComponent extends BaseComponent implements OnInit {
             return null;
         }
         return this.cards.filter((x)=>x.creditCardId == creditCardId)[0];
+    }
+
+    getFilteredTasks(): TaskModel[] {
+        if (!this.searchValue) {
+            return this.tasks;
+        }
+        return this.tasks.filter(x => x.title.toUpperCase()
+            .indexOf(this.searchValue.toUpperCase()) != -1);
     }
 }

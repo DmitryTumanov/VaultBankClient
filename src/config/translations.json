@@ -246,5 +246,13 @@
   "paused":{
     "EN": "Paused",
     "RU": "Приостановлено"
+  },
+  "cardsFilterEmpty":{
+    "EN": "Paused",
+    "RU": "Нет найденных карт по такому критерию."
+  },
+  "tasksFilterEmpty":{
+    "EN": "Paused",
+    "RU": "Нет найденных задач по такому критерию."
   }
 }
