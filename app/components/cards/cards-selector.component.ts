@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {BaseComponent} from "../base/base.component";
 import {TranslationsProvider} from "../../providers/translations/translations.provider";
 import {SettingsProvider} from "../../providers/settings/settings.provider";
@@ -13,6 +13,8 @@ declare let $: any;
     templateUrl: './cards-selector.component.html'
 })
 export class CardsSelectorComponent extends BaseComponent implements OnInit {
+    @Input()
+    isDefault = false;
     @Output()
     cardChange = new EventEmitter();
     public cards: CardModel[];

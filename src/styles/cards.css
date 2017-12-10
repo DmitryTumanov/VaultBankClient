@@ -1,16 +1,16 @@
-div.cards > div.plastic-card div.card-action > a {
+div.plastic-card div.card-action > a {
     cursor: pointer;
 }
 
-div.cards > div.plastic-card div.card-image {
+div.plastic-card div.card-image {
     display: flex;
 }
 
-div.cards > div.plastic-card div.card-image > img {
+div.plastic-card div.card-image > img {
     width: auto;
 }
 
-div.cards > div.plastic-card div.card-action > a.remove {
+div.plastic-card div.card-action > a.remove {
     float: right;
 }
 
@@ -18,24 +18,24 @@ div.cards {
     padding-top: 20px;
 }
 
-div.cards > div.plastic-card .card {
+div.plastic-card .card {
     margin-top: 0;
     margin-bottom: 20px;
 }
 
-div.cards > div.plastic-card .card > .card-stacked > .card-content > .header {
+div.plastic-card .card > .card-stacked > .card-content > .header {
     margin-top: 0;
 }
 
-div.cards > div.plastic-card .card > .card-image {
+div.plastic-card .card > .card-image {
     max-width: 30%;
 }
 
-div.cards > div.plastic-card .card > .card-image img {
+div.plastic-card .card > .card-image img {
     width: 100%;
     height: 100%;
 }
 
-div.cards > div.plastic-card .card > .card-stacked > .card-action > a {
+div.plastic-card .card > .card-stacked > .card-action > a {
     padding: 0;
 }

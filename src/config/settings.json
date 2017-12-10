@@ -14,17 +14,20 @@
     {
       "typeKey": 0,
       "image": "visa.png",
-      "smallImage": "visa_small.png"
+      "smallImage": "visa_small.png",
+      "translateKey": "visa"
     },
     {
       "typeKey": 1,
       "image": "mastercard.png",
-      "smallImage": "mastercard_small.png"
+      "smallImage": "mastercard_small.png",
+      "translateKey": "mastercard"
     },
     {
       "typeKey": 2,
       "image": "belcard.png",
-      "smallImage": "belcard_small.png"
+      "smallImage": "belcard_small.png",
+      "translateKey": "belcard"
     }
   ],
   "taskTypes": [

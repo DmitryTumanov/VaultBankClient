@@ -254,5 +254,17 @@
   "tasksFilterEmpty":{
     "EN": "Paused",
     "RU": "Нет найденных задач по такому критерию."
+  },
+  "visa":{
+    "EN": "Visa",
+    "RU": "Visa"
+  },
+  "mastercard":{
+    "EN": "MasterCard",
+    "RU": "MasterCard"
+  },
+  "belcard":{
+    "EN": "BelCard",
+    "RU": "БелКард"
   }
 }

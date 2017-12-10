@@ -61,9 +61,10 @@ import {TransactionsProvider} from "./providers/transactions/transactions.provid
 import {TaskTypesFilterComponent} from "./components/task-types/task-types-filter.component";
 import {AuthFormsValidator} from "./validators/auth-forms.validator";
 import {LoginTypeComponent} from "./components/login/login-type.component";
+import {CardTypesFilterComponent} from "./components/card-types/card-types-filter.component";
 
 const appRoutes: Routes = [
-    {path: '', component: LoginFirstStepComponent}, //TransactionsComponent},
+    {path: '', component: LoginFirstStepComponent},
     {path: 'cards', component: CardsComponent},
     {path: 'tasks', component: TasksComponent},
     {path: 'new-card', component: NewCardComponent},
@@ -120,7 +121,8 @@ const appRoutes: Routes = [
         ComingSoonComponent,
         TransactionsComponent,
         TaskTypesFilterComponent,
-        LoginTypeComponent
+        LoginTypeComponent,
+        CardTypesFilterComponent
     ],
     bootstrap: [AppComponent],
     providers: [

@@ -15,7 +15,9 @@
     </div>
 </div>
 <div class="row">
-    <cards-selector (cardChange)="updateTaskCard($event)"></cards-selector>
+    <div class="input-field col s12 m6 l6">
+        <cards-selector (cardChange)="updateTaskCard($event)"></cards-selector>
+    </div>
     <div class="input-field col s12 m6 l6">
         <input id="date" type="text" name="endDate"
                [formControl]="getControl('targetEnd')"

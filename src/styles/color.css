@@ -66,7 +66,7 @@ p.description {
 }
 
 a.remove,
-div.cards > div.plastic-card div.card-action > a.remove {
+div.plastic-card div.card-action  a.remove {
     color: #ff331f !important;
 }
 
@@ -86,7 +86,7 @@ div.card:hover:not(.paused) div.item-settings:hover {
     background-color: #607dbf;
 }
 
-div.cards > div.plastic-card .card > .card-stacked > .card-content > p {
+div.plastic-card .card  .card-stacked  .card-content  p {
     color: #bbbd30;
 }
 
@@ -179,4 +179,8 @@ p.description span.blue {
 
 .search {
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+input.select-dropdown {
+    color: #9e9e9e;
 }

@@ -8,6 +8,9 @@ export class TranslationsProvider extends BaseTranslationsProvider{
     get smallTask(){ return this.get("smallTask");}
     get mediumTask(){ return this.get("mediumTask");}
     get longTask(){ return this.get("longTask");}
+    get visa(){ return this.get("visa");}
+    get mastercard(){ return this.get("mastercard");}
+    get belcard(){ return this.get("belcard");}
     get smallTaskDescription(){ return this.get("smallTaskDescription");}
     get mediumTaskDescription(){ return this.get("mediumTaskDescription");}
     get longTaskDescription(){ return this.get("longTaskDescription");}
