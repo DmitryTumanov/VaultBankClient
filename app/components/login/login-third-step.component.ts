@@ -6,6 +6,7 @@ import {AuthorizationProvider} from "../../providers/authorization/authorization
 import {ActivatedRoute, Router} from "@angular/router";
 import {LoginThirdStepModel} from "../../models/login-third-step.model";
 import {PreLoaderProvider} from "../../providers/preloader/pre-loader.provider";
+import {ValidatorsProvider} from "../../providers/validators/validators.provider";
 
 @Component({
     selector: "login-third-step",
@@ -14,8 +15,10 @@ import {PreLoaderProvider} from "../../providers/preloader/pre-loader.provider";
 export class LoginThirdStepComponent extends BaseComponent {
     public model: LoginThirdStepModel;
     public fatalError: string;
+    public validator: any;
 
-    constructor(translator: TranslationsProvider,
+    constructor(validatorProvider: ValidatorsProvider,
+                translator: TranslationsProvider,
                 settings: SettingsProvider,
                 route: ActivatedRoute,
                 private authorizationProvider: AuthorizationProvider,
@@ -23,6 +26,7 @@ export class LoginThirdStepComponent extends BaseComponent {
                 private preLoader: PreLoaderProvider) {
         super(translator, settings);
         this.model = new LoginThirdStepModel();
+        this.validator = validatorProvider.thirdAuthFormValidator;
         route.params.subscribe(params => {
             this.model.twoWayAuthTarget = params['email'];
             this.model.login = params['login'];
@@ -31,6 +35,7 @@ export class LoginThirdStepComponent extends BaseComponent {
 
     public login(){
         this.preLoader.start();
+        this.model.twoWayAuthKey = this.validator.controls.twoWayAuthKey.value;
         this.authorizationProvider.authorizeThirdStep(this.model).then((result:boolean)=>{
             this.preLoader.stop();
             if(result){
@@ -38,5 +43,13 @@ export class LoginThirdStepComponent extends BaseComponent {
             }
             this.fatalError = "Invalid access key";
         });
+    }
+
+    public getControl(key: string): any {
+        return this.validator.controls[key];
+    }
+
+    public validateControl(key: string): any {
+        return !this.validator.controls[key].valid && this.validator.controls[key].touched;
     }
 }

@@ -21,14 +21,17 @@
             </div>
             <div class='row'>
                 <div class='input-field col s12'>
-                    <input class='validate' type='text' name='password' id='password' [(ngModel)]="model.accessKey"/>
+                    <input class='validate' type='text' name='password' id='password' [formControl]="getControl('twoWayAuthKey')"/>
                     <label for='password'>{{translator.accessKeyEnter}}</label>
+                    <error-field [expression]="validateControl('twoWayAuthKey')"
+                                 [text]="'Auth key required'"></error-field>
                 </div>
             </div>
             <error-field [expression]="fatalError" [text]="fatalError"></error-field>
             <br/>
             <div class='row'>
-                <button name='btn_login' class='col s12 btn btn-large waves-effect blue' (click)="login()">
+                <button name='btn_login' class='col s12 btn btn-large waves-effect blue' [disabled]="validator.invalid"
+                        (click)="login()">
                     <i class="material-icons">done</i>
                 </button>
             </div>

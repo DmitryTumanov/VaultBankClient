@@ -57,13 +57,13 @@ export class AuthorizationService extends BaseService {
     private mapThirdStepModel(loginModel: LoginThirdStepModel): any {
         return {
             "UserName": loginModel.login,
-            "EmailKey": loginModel.accessKey
+            "TwoWayAuthKey": loginModel.twoWayAuthKey
         }
     }
 
     private mapKeyStepModel(loginModel: LoginThirdStepModel): any {
         return {
-            "authKey": loginModel.accessKey
+            "AuthKey": loginModel.twoWayAuthKey
         }
     }
 }

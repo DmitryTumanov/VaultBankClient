@@ -59,9 +59,11 @@ import {TransactionsComponent} from "./components/transactions/transactions.comp
 import {TransactionsService} from "./services/transactions/transactions.service";
 import {TransactionsProvider} from "./providers/transactions/transactions.provider";
 import {TaskTypesFilterComponent} from "./components/task-types/task-types-filter.component";
+import {AuthFormsValidator} from "./validators/auth-forms.validator";
+import {LoginTypeComponent} from "./components/login/login-type.component";
 
 const appRoutes: Routes = [
-    {path: '', component: TasksComponent}, //TransactionsComponent},
+    {path: '', component: LoginFirstStepComponent}, //TransactionsComponent},
     {path: 'cards', component: CardsComponent},
     {path: 'tasks', component: TasksComponent},
     {path: 'new-card', component: NewCardComponent},
@@ -117,7 +119,8 @@ const appRoutes: Routes = [
         TaskItemComponent,
         ComingSoonComponent,
         TransactionsComponent,
-        TaskTypesFilterComponent
+        TaskTypesFilterComponent,
+        LoginTypeComponent
     ],
     bootstrap: [AppComponent],
     providers: [
@@ -142,6 +145,7 @@ const appRoutes: Routes = [
         TaskFormValidator,
         TransactionsService,
         TransactionsProvider,
+        AuthFormsValidator,
         { provide: APP_INITIALIZER, useFactory: (config: AppInitializer) => () => config.load(), deps: [AppInitializer], multi: true }
     ]
 })

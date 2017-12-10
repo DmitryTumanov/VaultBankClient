@@ -638,3 +638,7 @@ ul.collection li.collection-item.avatar.full{
 .task-type{
     padding: 5px;
 }
+
+p.radio{
+    text-align: center;
+}
