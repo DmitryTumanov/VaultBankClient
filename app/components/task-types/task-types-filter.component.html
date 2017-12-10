@@ -1,0 +1,7 @@
+<div *ngFor="let taskType of taskTypes" class="task-type">
+    <input type="checkbox"
+           [id]="taskType.typeKey"
+           [checked]="isTaskTypeActive(taskType.typeKey)"
+           (click)="updateTaskType(taskType.typeKey)"/>
+    <label [for]="taskType.typeKey">{{translator[taskType.translateKey]}}</label>
+</div>

@@ -99,7 +99,7 @@ button.btn.btn-default {
     background-color: #bbbd30;
 }
 
-button.btn-flat{
+button.btn-flat {
     color: #bbbd30;
 }
 
@@ -123,57 +123,60 @@ div.alert {
 }
 
 .task-type-selector ul.collapsible li.inactive,
-.task-type-selector ul.collapsible li.inactive .material-icons{
+.task-type-selector ul.collapsible li.inactive .material-icons {
     color: #b6b6b9 !important;
 }
 
-li.collection-item p{
+li.collection-item p {
     color: #bbbd30;
 }
 
-li.collection-item .content .material-icons{
+li.collection-item .content .material-icons {
     color: #607dbf;
 }
 
-li.collection-item .after{
+li.collection-item .after {
     background: rgba(104, 104, 104, 0.14);
 }
 
-li.collection-item .before{
+li.collection-item .before {
     background: rgba(60, 224, 0, 0.41);
 }
 
-li.collection-item.paused div.task-pause{
+li.collection-item.paused div.task-pause {
     color: #ff331f;
 }
 
-.task-key{
+.task-key {
     color: #9F9F9F;
 }
 
-.task-value{
+.task-value {
     color: #9F9F9F;
 }
 
-.task-value span{
+.task-value span {
     color: #2196F3;
 }
 
-.heading p{
+.heading p {
     color: #bbbd30;
 }
 
-p.description span.yellow{
+p.description span.yellow {
     color: #bbbd30 !important;
     background-color: transparent !important;
 }
 
-p.description span.blue{
+p.description span.blue {
     color: rgba(0, 8, 180, 0.85) !important;
     background-color: transparent !important;
 }
 
-
-.top-container.coming-soon h5{
+.top-container.coming-soon h5 {
     color: #9F9F9F;
+}
+
+.search {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }

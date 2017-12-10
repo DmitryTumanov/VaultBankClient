@@ -173,6 +173,11 @@ div.main-container.shrink div.pre-loader{
     width: 93%;
 }
 
+div.main-container.shrink .search.stick{
+    width: 93%;
+    left: 7%;
+}
+
 nav.main-nav,
 nav.main-nav.block{
     width: 20%;
@@ -183,4 +188,10 @@ div.main-container div.pre-loader,
 div.main-container.block,
 div.main-container.block div.pre-loader{
     width: 80%;
+}
+
+div.main-container .search.stick,
+div.main-container.block .search.stick{
+    width: 80%;
+    left: 20%;
 }

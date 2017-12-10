@@ -55,9 +55,13 @@ import {NewTaskStepOneComponent} from "./components/new-task/new-task-step-one.c
 import {NewTaskStepTwoComponent} from "./components/new-task/new-task-step-two.component";
 import {TaskItemComponent} from "./components/tasks/task-item.component";
 import {ComingSoonComponent} from "./components/coming-soon/coming-soon.component";
+import {TransactionsComponent} from "./components/transactions/transactions.component";
+import {TransactionsService} from "./services/transactions/transactions.service";
+import {TransactionsProvider} from "./providers/transactions/transactions.provider";
+import {TaskTypesFilterComponent} from "./components/task-types/task-types-filter.component";
 
 const appRoutes: Routes = [
-    {path: '', component: LoginFirstStepComponent},
+    {path: '', component: TasksComponent}, //TransactionsComponent},
     {path: 'cards', component: CardsComponent},
     {path: 'tasks', component: TasksComponent},
     {path: 'new-card', component: NewCardComponent},
@@ -66,7 +70,7 @@ const appRoutes: Routes = [
     {path: 'login-third-step/:login/:email', component: LoginThirdStepComponent},
     {path: 'login-key-step/:login', component: LoginKeyStepComponent},
     {path: 'settings', component: ComingSoonComponent},
-    {path: 'transactions', component: ComingSoonComponent},
+    {path: 'transactions', component: TransactionsComponent},
     {path: 'task-settings', component: ComingSoonComponent},
     {path: 'card-settings', component: ComingSoonComponent},
 ];
@@ -111,7 +115,9 @@ const appRoutes: Routes = [
         NewTaskStepOneComponent,
         NewTaskStepTwoComponent,
         TaskItemComponent,
-        ComingSoonComponent
+        ComingSoonComponent,
+        TransactionsComponent,
+        TaskTypesFilterComponent
     ],
     bootstrap: [AppComponent],
     providers: [
@@ -134,6 +140,8 @@ const appRoutes: Routes = [
         BaseService,
         PreLoaderProvider,
         TaskFormValidator,
+        TransactionsService,
+        TransactionsProvider,
         { provide: APP_INITIALIZER, useFactory: (config: AppInitializer) => () => config.load(), deps: [AppInitializer], multi: true }
     ]
 })

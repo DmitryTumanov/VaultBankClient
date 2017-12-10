@@ -60,6 +60,9 @@
     "cardAddPath":"cards/add",
     "cardRemovePath":"cards/delete",
     "tasksPath": "goals",
-    "taskAddPath":"goals/add"
+    "taskAddPath":"goals/add",
+    "transactionsPath": "transactions",
+    "transactionsGetByCardPath":"transactions/bycard",
+    "transactionsGetByTaskPath":"transactions/bygoal"
   }
 }

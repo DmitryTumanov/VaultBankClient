@@ -1,0 +1,19 @@
+<div class="container top-container cards">
+    <div class="search">
+        <div class="row">
+            <div class="col s12">
+                <div class="input-field">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <h5>{{translator.cardsPageTitle}}</h5>
+    <div class="plastic-card" *ngFor="let transaction of transactions">
+        <p>{{transaction.status}}</p>
+    </div>
+    <div *ngIf="transactions == undefined || transactions.length == 0">
+        <div class="empty">
+        </div>
+    </div>
+</div>

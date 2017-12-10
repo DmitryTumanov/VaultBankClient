@@ -5,22 +5,25 @@ import {PreLoaderProvider} from "../../providers/preloader/pre-loader.provider";
 import {BaseComponent} from "../base/base.component";
 import {TranslationsProvider} from "../../providers/translations/translations.provider";
 import {SettingsProvider} from "../../providers/settings/settings.provider";
-
-declare let $: any;
+import {TasksProvider} from "../../providers/tasks/tasks.provider";
+import {TaskModel} from "../../models/task.model";
+import {TransactionModel} from "../../models/transaction.model";
+import {TransactionsProvider} from "../../providers/transactions/transactions.provider";
 
 @Component({
-    selector: 'cards',
-    templateUrl: './cards.component.html'
+    selector: 'transactions',
+    templateUrl: './transactions.component.html'
 })
-export class CardsComponent extends BaseComponent implements OnInit {
+export class TransactionsComponent extends BaseComponent implements OnInit {
     public cards: CardModel[];
-    public searchValue: string = "";
-
-    private selectedCardType = -1;
+    public tasks: TaskModel[];
+    public transactions: TransactionModel[];
 
     constructor(settings: SettingsProvider,
                 translations: TranslationsProvider,
                 private cardProvider: CardsProvider,
+                private tasksProvider: TasksProvider,
+                private transactionsProvider: TransactionsProvider,
                 private preLoader: PreLoaderProvider) {
         super(translations, settings);
     }
@@ -28,25 +31,9 @@ export class CardsComponent extends BaseComponent implements OnInit {
     async ngOnInit() {
         this.preLoader.start();
         this.cards = await this.cardProvider.getCards();
+        this.tasks = await this.tasksProvider.getTasks();
+        let test = await this.transactionsProvider.getTransactionsForCard(1);
         this.preLoader.stop();
     }
 
-    getFilteredCards(): CardModel[] {
-        if (!this.searchValue) {
-            return this.filterByCardType(this.cards);
-        }
-        return this.filterByCardType(this.cards.filter(x => x.customCardName.toUpperCase()
-            .indexOf(this.searchValue.toUpperCase()) != -1));
-    }
-
-    updateCardTypeFilter(type: number) {
-        this.selectedCardType = type;
-    }
-
-    private filterByCardType(cards: CardModel[]): CardModel[] {
-        if (this.selectedCardType == -1) {
-            return cards;
-        }
-        return cards.filter(x => x.cardType == this.selectedCardType);
-    }
 }

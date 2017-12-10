@@ -39,16 +39,3 @@ div.cards > div.plastic-card .card > .card-image img {
 div.cards > div.plastic-card .card > .card-stacked > .card-action > a {
     padding: 0;
 }
-
-div.cards > div.search .input-field i.search{
-    line-height: 55px;
-}
-
-div.cards > div.search .input-field {
-    width: 70%;
-    margin: 0 auto;
-}
-
-div.cards > div.search .input-field input{
-    margin-bottom: 0;
-}

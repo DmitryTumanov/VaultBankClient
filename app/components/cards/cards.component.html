@@ -1,15 +1,25 @@
 <div class="container top-container cards">
     <div class="search">
         <div class="row">
-            <div class="col s12">
+            <div class="col s11 m11 l11">
                 <div class="input-field">
-                    <i class="material-icons prefix search">search</i>
-                    <input id="search-field" [(ngModel)]="searchValue">
+                    <i class="material-icons prefix search-icon">search</i>
+                    <input id="search-field" [placeholder]="'Введите имя кредитной карты'" [(ngModel)]="searchValue">
+                </div>
+            </div>
+            <div class="col s1 m1 l1 filter-activator">
+                <a materialize="dropdown" class='dropdown-button' data-activates='dropdown1'>
+                    <i class="material-icons">filter_list</i>
+                </a>
+                <div id='dropdown1' class='dropdown-content'>
+                    <div class="row">
+                        <h6>Выберите тип карты:</h6>
+                        <card-types (cardTypeChange)="updateCardTypeFilter($event)"></card-types>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <h5>{{translator.cardsPageTitle}}</h5>
     <div class="plastic-card" *ngFor="let card of getFilteredCards()">
         <card-item [card]="card"></card-item>
     </div>

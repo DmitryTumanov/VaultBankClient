@@ -571,3 +571,70 @@ ul.collection li.collection-item.avatar.full{
     flex-direction: row;
     justify-content: flex-end;
 }
+
+.search{
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px 0 40px;
+}
+
+.search>.row{
+    padding: 0 0 10px;
+    margin: auto;
+}
+
+.search .input-field i.search-icon{
+    line-height: 55px;
+    padding-left: 10px;
+}
+
+.search .input-field {
+    margin: 0 auto 0 0;
+}
+
+.search.stick .input-field {
+    width: 100%;
+    margin: auto;
+}
+
+.search .input-field input{
+    margin-bottom: 0;
+}
+
+.dropdown-button{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 55px;
+    font-size: 18px;
+}
+
+.dropdown-button i{
+    line-height: 55px;
+    cursor: pointer;
+}
+
+.dropdown-content{
+    top: inherit !important;
+    overflow: hidden;
+    width: 300px !important;
+    left: 70% !important;
+}
+
+.dropdown-content .row{
+    padding: 5px 20px;
+}
+
+.dropdown-content .row .input-field{
+    width: inherit;
+}
+
+.dropdown-content .row .input-field img{
+    padding: 5px;
+}
+
+.task-type{
+    padding: 5px;
+}

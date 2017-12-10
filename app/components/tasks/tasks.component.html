@@ -1,15 +1,25 @@
 <div class="container top-container tasks">
     <div class="search">
         <div class="row">
-            <div class="col s12">
+            <div class="col s11 m11 l11">
                 <div class="input-field">
-                    <i class="material-icons prefix search">search</i>
-                    <input id="search-field" [(ngModel)]="searchValue">
+                    <i class="material-icons prefix search-icon">search</i>
+                    <input id="search-field" [placeholder]="'Введите имя накопления'" [(ngModel)]="searchValue">
+                </div>
+            </div>
+            <div class="col s1 m1 l1 filter-activator">
+                <a materialize="dropdown" class='dropdown-button' data-activates='dropdown1'>
+                    <i class="material-icons">filter_list</i>
+                </a>
+                <div id='dropdown1' class='dropdown-content'>
+                    <div class="row">
+                        <h6>Выберите тип накопления:</h6>
+                        <task-types-filter (taskTypeChange)="updateTaskTypeFilter($event)"></task-types-filter>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <h5>{{translator.tasksPageTitle}}</h5>
     <ul class="collection">
         <task-item [card]="getCardForTask(task.creditCardId)" *ngFor="let task of getFilteredTasks()"
                    [task]="task"></task-item>
