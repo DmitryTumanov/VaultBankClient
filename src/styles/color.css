@@ -1,5 +1,5 @@
 body {
-    color: #0288D1;
+    color: #03A9F4;
 }
 
 .main-container.full .colored {
@@ -34,7 +34,7 @@ div.main-container .login-container form {
 }
 
 nav.main-nav {
-    color: #0288D1;
+    color: #03A9F4;
     background-color: #FFFFFF !important;
     box-shadow: 0 0 16px 0 #b6b6b9;
 }
@@ -183,4 +183,91 @@ p.description span.blue {
 
 input.select-dropdown {
     color: #9e9e9e;
+}
+
+div.task-description {
+    background-color: #ffffff;
+}
+
+div.task-description .title {
+    background: #03A9F4;
+    color: #FFFFFF;
+}
+
+div.task-description .title p{
+    color:#B3E5FC;
+}
+
+div.history tbody td,
+div.task-description .description p {
+    color: #757575;
+}
+
+div.history p:first-child,
+div.history thead th,
+.description.card-description .deposit-type-view p,
+div.task-description .description p span {
+    color: #212121;
+}
+
+.task-description .tabs .tab a:hover,
+.task-description .tabs .tab a.active {
+    background-color: transparent;
+    color: #0288D1;
+}
+
+.task-description .tabs .tab a {
+    color: #BDBDBD;
+}
+
+.task-description .tabs .indicator{
+    background-color: #0288D1;
+}
+
+div.task-description progress::-webkit-progress-bar {
+    background-color: #FFFFFF;
+}
+
+div.task-description progress::-webkit-progress-value {
+    background-color: #FFFFFF;
+}
+
+div.task-description progress.blue::-webkit-progress-value {
+    background-color: #B3E5FC;
+}
+
+.progress-title{
+    color: #0288D1;
+}
+
+.blue {
+    background-color: #03A9F4 !important;
+}
+
+.task-type-icon{
+    color: #ffffff;
+}
+
+.description.progress-description .deposit-type-view span{
+   background-color: transparent !important;
+}
+
+.description.progress-description .deposit-type-view span.red{
+   color: #ff3d3d !important;
+}
+
+.description.progress-description .deposit-type-view span.yellow{
+   color: #fff135 !important;
+}
+
+.description.progress-description .deposit-type-view span.green{
+   color: #5eff69 !important;
+}
+
+div.task-description table {
+    background-color: transparent;
+}
+
+.description.card-description .edit-controls > i {
+    color: #fff135 !important;
 }

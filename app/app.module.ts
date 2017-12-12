@@ -62,6 +62,7 @@ import {TaskTypesFilterComponent} from "./components/task-types/task-types-filte
 import {AuthFormsValidator} from "./validators/auth-forms.validator";
 import {LoginTypeComponent} from "./components/login/login-type.component";
 import {CardTypesFilterComponent} from "./components/card-types/card-types-filter.component";
+import {TaskSettingsComponent} from "./components/task-settings/task-settings.component";
 
 const appRoutes: Routes = [
     {path: '', component: LoginFirstStepComponent},
@@ -74,7 +75,7 @@ const appRoutes: Routes = [
     {path: 'login-key-step/:login', component: LoginKeyStepComponent},
     {path: 'settings', component: ComingSoonComponent},
     {path: 'transactions', component: TransactionsComponent},
-    {path: 'task-settings', component: ComingSoonComponent},
+    {path: 'task-settings/:taskId', component: TaskSettingsComponent},
     {path: 'card-settings', component: ComingSoonComponent},
 ];
 
@@ -122,7 +123,8 @@ const appRoutes: Routes = [
         TransactionsComponent,
         TaskTypesFilterComponent,
         LoginTypeComponent,
-        CardTypesFilterComponent
+        CardTypesFilterComponent,
+        TaskSettingsComponent
     ],
     bootstrap: [AppComponent],
     providers: [

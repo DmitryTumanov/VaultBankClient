@@ -58,7 +58,7 @@
                 </div>
             </div>
         </div>
-        <a class="secondary-content" routerLink="/task-settings"><i class="material-icons">settings</i></a>
+        <a class="secondary-content" [routerLink]="'/task-settings/'+task.goalId"><i class="material-icons">settings</i></a>
         <a class="height-trigger" (click)="triggerHeight()"
            *ngIf="!isFull"><i class="material-icons">keyboard_arrow_down</i></a>
         <a class="height-trigger" (click)="triggerHeight()"
@@ -66,5 +66,5 @@
         <div class="after" [style.width.%]="100 - getTaskPercents()"></div>
     </div>
     <div class="task-avg-value" *ngIf="isFull">{{getTaskPercents()}}%</div>
-    <div class="task-pause"><span routerLink="/task-settings">{{translator.paused}}</span></div>
+    <div class="task-pause"><span [routerLink]="'/task-settings/'+task.goalId">{{translator.paused}}</span></div>
 </li>
