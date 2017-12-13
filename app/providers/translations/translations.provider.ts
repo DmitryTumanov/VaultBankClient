@@ -70,4 +70,7 @@ export class TranslationsProvider extends BaseTranslationsProvider{
     get paused(){ return this.get("paused");}
     get cardsFilterEmpty(){ return this.get("cardsFilterEmpty");}
     get tasksFilterEmpty(){ return this.get("tasksFilterEmpty");}
+    get transactionErrorStatus(){ return this.get("transactionErrorStatus");}
+    get transactionValidStatus(){ return this.get("transactionValidStatus");}
+    get transactionRetriedStatus(){ return this.get("transactionRetriedStatus");}
 }

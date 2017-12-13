@@ -266,5 +266,17 @@
   "belcard":{
     "EN": "BelCard",
     "RU": "БелКард"
+  },
+  "transactionValidStatus":{
+    "EN": "Successful",
+    "RU": "Завершено"
+  },
+  "transactionErrorStatus":{
+    "EN": "Error",
+    "RU": "Ошибка"
+  },
+  "transactionRetriedStatus":{
+    "EN": "Retried",
+    "RU": "Повторена"
   }
 }

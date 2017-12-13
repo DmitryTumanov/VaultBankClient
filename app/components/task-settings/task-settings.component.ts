@@ -72,12 +72,12 @@ export class TaskSettingsComponent extends BaseComponent implements OnInit {
         this.cardId = this.task.creditCardId;
     }
 
-    public saveNewCard(){
+    public async saveNewCard(){
         this.isOnCardChange = false;
         this.task.creditCardId = this.cardId;
         this.card = this.cards.filter(x => x.creditCardId == this.task.creditCardId)[0];
         this.cardId = -1;
-        //send to server
+        await this.tasksProvider.editTask(this.task);
     }
 
     public cancelCardChange(){

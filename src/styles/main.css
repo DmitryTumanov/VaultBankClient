@@ -613,6 +613,10 @@ p.radio {
     width: 90%;
 }
 
+.transactions.container{
+    width: 95%;
+}
+
 .tasks.container .search .col,
 .cards.container .search .col {
     padding: 10px;
@@ -715,4 +719,30 @@ div.history p:first-child {
     text-align: center;
     margin: 20px 0 0;
     font-size: 18px;
+}
+
+div.transactions{
+    padding-top: 20px;
+}
+
+.table-wrapper .transactions-table{
+    padding: 10px;
+}
+
+.table-wrapper .transactions-table td.card-name,
+.table-wrapper .transactions-table td.transaction-status{
+    display: flex;
+}
+
+.table-wrapper .transactions-table td.transaction-status.retried i,
+.table-wrapper .transactions-table td.transaction-status.valid i{
+    display: none;
+}
+
+.table-wrapper .transactions-table td.transaction-status.pause i{
+    display: block;
+}
+
+.table-wrapper .transactions-table td.task-name i{
+    font-size: 15px;
 }

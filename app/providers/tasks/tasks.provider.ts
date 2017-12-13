@@ -29,4 +29,10 @@ export class TasksProvider {
             return result;
         });
     }
+
+    async editTask(taskModel: TaskModel):Promise<boolean>{
+        return await this.tasksService.editTask(taskModel).then((result: boolean) => {
+            return result;
+        });
+    }
 }

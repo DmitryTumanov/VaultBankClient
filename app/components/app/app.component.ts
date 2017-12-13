@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, DoCheck, OnChanges, OnInit} from '@angular/core';
 import {StorageService} from "../../services/storage/storage.service";
 import {SettingsProvider} from "../../providers/settings/settings.provider";
 import {PreLoaderProvider} from "../../providers/preloader/pre-loader.provider";
@@ -7,7 +7,7 @@ import {PreLoaderProvider} from "../../providers/preloader/pre-loader.provider";
     selector: 'my-app',
     templateUrl: './app.component.html'
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, DoCheck{
     public mainWindowClass: string = "";
 
     private isDataPreLoading: boolean;
@@ -20,7 +20,14 @@ export class AppComponent implements OnInit{
         });
     }
 
+    ngDoCheck(){
+        this.mainWindowClass = this.getMainWindowClass();
+    }
+
     ngOnInit(){
+        this.storage.set(this.settings.tokenKey, "");
+        this.storage.set(this.settings.userKey, "");
+        this.storage.set(this.settings.menuStateKey, "");
         this.mainWindowClass = this.getMainWindowClass();
     }
 

@@ -5,16 +5,16 @@ import {TransactionModel} from "../../models/transaction.model";
 @Injectable()
 export class TransactionsService extends BaseService {
 
-    public getTransactionsForCard(cardId: number): Promise<any> {
+    public getTransactionsForCard(cardId: number): Promise<any[]> {
         return new Promise((resolve, reject) => {
-            this.getAuthorized(this.settings.transactionsGetByCardPath + "?cardId=" + cardId)
+            this.getAuthorized(this.settings.transactionsGetByCardPath + "/" + cardId)
                 .subscribe((response: any) => {
                     resolve(response);
                 });
         });
     }
 
-    public getTransactionsForTask(taskId: number): Promise<TransactionModel[]> {
+    public getTransactionsForTask(taskId: number): Promise<any[]> {
         return new Promise((resolve, reject) => {
             this.getAuthorized(this.settings.transactionsGetByTaskPath + "/" + taskId)
                 .subscribe((response: TransactionModel[]) => {

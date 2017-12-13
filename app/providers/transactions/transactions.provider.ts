@@ -8,11 +8,11 @@ export class TransactionsProvider {
     constructor(private transactionsService: TransactionsService) {
     }
 
-    async getTransactionsForCard(cardId: number): Promise<any> {
+    async getTransactionsForCard(cardId: number): Promise<any[]> {
         return await this.transactionsService.getTransactionsForCard(cardId);
     }
 
-    async getTransactionsForTask(taskId: number): Promise<TransactionModel[]> {
+    async getTransactionsForTask(taskId: number): Promise<any[]> {
         return await this.transactionsService.getTransactionsForCard(taskId);
     }
 }

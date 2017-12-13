@@ -64,6 +64,7 @@
     "cardRemovePath":"cards/delete",
     "tasksPath": "goals",
     "taskAddPath":"goals/add",
+    "taskEditPath":"goals/edit",
     "transactionsPath": "transactions",
     "transactionsGetByCardPath":"transactions/bycard",
     "transactionsGetByTaskPath":"transactions/bygoal"

@@ -9,6 +9,6 @@ export class TransactionModel{
     public transactionIsRetried:boolean;
     public status: string;
     public creditCard:CardModel;
-    public goal: TaskModel;
+    public task: TaskModel;
 }
 

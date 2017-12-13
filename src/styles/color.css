@@ -185,6 +185,7 @@ input.select-dropdown {
     color: #9e9e9e;
 }
 
+.table-wrapper,
 div.task-description {
     background-color: #ffffff;
 }
@@ -198,11 +199,13 @@ div.task-description .title p{
     color:#B3E5FC;
 }
 
+.transactions-table tbody td,
 div.history tbody td,
 div.task-description .description p {
     color: #757575;
 }
 
+.transactions-table thead th,
 div.history p:first-child,
 div.history thead th,
 .description.card-description .deposit-type-view p,
@@ -252,14 +255,17 @@ div.task-description progress.blue::-webkit-progress-value {
    background-color: transparent !important;
 }
 
+.table-wrapper .transactions-table td.transaction-status.pause,
 .description.progress-description .deposit-type-view span.red{
    color: #ff3d3d !important;
 }
 
+.table-wrapper .transactions-table td.transaction-status.retried,
 .description.progress-description .deposit-type-view span.yellow{
    color: #fff135 !important;
 }
 
+.table-wrapper .transactions-table td.transaction-status.valid,
 .description.progress-description .deposit-type-view span.green{
    color: #5eff69 !important;
 }

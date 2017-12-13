@@ -1,0 +1,9 @@
+<select name="singleSelect" [ngModel]="tasks" materialize="material_select"
+        (change)="updateTask($event)">
+    <option value="" selected [value]="-1">Выберите интересующую задачу</option>
+    <option *ngFor="let task of tasks"
+            class="left"
+            [value]="task.goalId">
+        {{task.title.trim()}}
+    </option>
+</select>
