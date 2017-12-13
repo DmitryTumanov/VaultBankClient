@@ -1,9 +1,9 @@
 <div class="transactions-table" *ngIf="transactions && transactions.length > 0">
-    <table>
+    <table class="highlight">
         <thead>
         <tr>
-            <th>Id транзакции</th>
-            <th>Имя задачи</th>
+            <th>№ транзакции</th>
+            <th *ngIf="!isDefault">Имя задачи</th>
             <th>Имя кредитной карты</th>
             <th>Сумма</th>
             <th>Статус</th>
@@ -12,17 +12,26 @@
         <tbody>
         <tr *ngFor="let transaction of transactions">
             <td>{{transaction.id}}</td>
-            <td class="task-name">
-                <i class="material-icons retry-button"
-                   [style.color]="getTaskTypeColor(transaction.task)">fiber_manual_record</i>
-                {{transaction.task.title}}
+            <td class="task-name" *ngIf="!isDefault">
+                <div>
+                    <i class="material-icons"
+                       [style.color]="getTaskTypeColor(transaction.task)">fiber_manual_record</i>
+                    {{transaction.task.title}}
+                </div>
             </td>
-            <td class="card-name">{{transaction.creditCard.customCardName}}</td>
+            <td class="card-name">
+                <div>
+                    <img [src]="'images/'+getCardImage(transaction.creditCard.cardType)">
+                    <span>{{transaction.creditCard.customCardName}}</span>
+                </div>
+            </td>
             <td>{{transaction.money}}</td>
             <td class="transaction-status"
                 [ngClass]="getTransactionStatusClass(transaction)">
-                {{getTransactionStatus(transaction)}}
-                <i class="material-icons retry-button">cached</i>
+                <div>
+                    {{getTransactionStatus(transaction)}}
+                    <i class="material-icons retry-button">cached</i>
+                </div>
             </td>
         </tr>
         </tbody>

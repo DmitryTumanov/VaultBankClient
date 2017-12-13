@@ -613,7 +613,7 @@ p.radio {
     width: 90%;
 }
 
-.transactions.container{
+.transactions.container {
     width: 95%;
 }
 
@@ -721,28 +721,54 @@ div.history p:first-child {
     font-size: 18px;
 }
 
-div.transactions{
+div.transactions {
     padding-top: 20px;
 }
 
-.table-wrapper .transactions-table{
+.transactions .card-name img{
+    height: 30px;
+}
+
+.table-wrapper .transactions-table {
     padding: 10px;
 }
 
-.table-wrapper .transactions-table td.card-name,
-.table-wrapper .transactions-table td.transaction-status{
+.table-wrapper .transactions-table td.card-name > div,
+.table-wrapper .transactions-table td.task-name > div,
+.table-wrapper .transactions-table td.transaction-status > div {
     display: flex;
 }
 
 .table-wrapper .transactions-table td.transaction-status.retried i,
-.table-wrapper .transactions-table td.transaction-status.valid i{
+.table-wrapper .transactions-table td.transaction-status.valid i {
     display: none;
 }
 
-.table-wrapper .transactions-table td.transaction-status.pause i{
+.table-wrapper .transactions-table td.transaction-status.pause i {
     display: block;
 }
 
-.table-wrapper .transactions-table td.task-name i{
-    font-size: 15px;
+.table-wrapper .transactions-table td.card-name span{
+    padding: 5px;
+}
+
+.transactions .table-wrapper {
+    border-radius: 10px;
+}
+
+.transactions .search {
+    margin-top: 0;
+}
+
+.transactions .search .row .col:first-child {
+    margin-top: 10px;
+}
+
+.login-container .row.text-input {
+    width: 90%;
+    margin: 5px auto;
+}
+
+div.main-container.loaded .colored{
+    filter: blur(2px);
 }

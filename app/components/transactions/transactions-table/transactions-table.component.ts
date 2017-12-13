@@ -2,6 +2,7 @@ import {BaseComponent} from "../../base/base.component";
 import {Component, Input} from "@angular/core";
 import {TransactionModel} from "../../../models/transaction.model";
 import {TaskModel} from "../../../models/task.model";
+import {CardTypeModel} from "../../../models/card-type.model";
 
 @Component({
     selector: "transactions-table",
@@ -10,6 +11,8 @@ import {TaskModel} from "../../../models/task.model";
 export class TransactionsTableComponent extends BaseComponent {
     @Input()
     public transactions: TransactionModel[];
+    @Input()
+    public isDefault: boolean = false;
 
     getTransactionStatus(item: TransactionModel): string {
         if (item.transactionIsRetried) {
@@ -34,5 +37,10 @@ export class TransactionsTableComponent extends BaseComponent {
     getTaskTypeColor(task: TaskModel): string {
         let taskType = this.settings.taskTypes.filter((x: any) => x.typeKey == task.targetType)[0];
         return taskType.color;
+    }
+
+    public getCardImage(cardType: string): string {
+        let cardSetting = this.settings.cardTypes.filter((x: CardTypeModel) => x.typeKey == cardType)[0];
+        return cardSetting.smallImage;
     }
 }

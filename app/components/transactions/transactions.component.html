@@ -9,7 +9,12 @@
             </div>
             <div *ngIf="getFilteredTransactions() == undefined || getFilteredTransactions().length == 0">
                 <div class="empty">
-                    <h5>Выберите интересующие значения фильтров для вывода транзакций</h5>
+                    <h5 *ngIf="taskId == -1 && cardId == -1">
+                        Выберите интересующие значения фильтров для вывода транзакций
+                    </h5>
+                    <h5 *ngIf="taskId > -1 || cardId > -1">
+                        Не было найдено ни одной транзакции по данному критерию
+                    </h5>
                 </div>
             </div>
         </div>

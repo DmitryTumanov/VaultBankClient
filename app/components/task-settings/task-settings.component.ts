@@ -7,6 +7,8 @@ import {ActivatedRoute} from "@angular/router";
 import {TaskModel} from "../../models/task.model";
 import {CardModel} from "../../models/card.model";
 import {CardsProvider} from "../../providers/cards/cards.provider";
+import {TransactionsProvider} from "../../providers/transactions/transactions.provider";
+import {TransactionModel} from "../../models/transaction.model";
 
 @Component({
     selector: "task-settings",
@@ -16,6 +18,7 @@ export class TaskSettingsComponent extends BaseComponent implements OnInit {
     public task: TaskModel = new TaskModel();
     public taskType: any;
     public isOnCardChange: boolean;
+    public transactions: TransactionModel[] = [];
 
     private card: CardModel = new CardModel();
     private cards: CardModel[] = [];
@@ -26,7 +29,8 @@ export class TaskSettingsComponent extends BaseComponent implements OnInit {
                 settings: SettingsProvider,
                 route: ActivatedRoute,
                 private tasksProvider: TasksProvider,
-                private cardsProvider: CardsProvider) {
+                private cardsProvider: CardsProvider,
+                private transactionsProvider: TransactionsProvider) {
         super(translator, settings);
         route.params.subscribe(params => {
             this.taskId = params['taskId'];
@@ -39,6 +43,7 @@ export class TaskSettingsComponent extends BaseComponent implements OnInit {
         this.task = tasks.filter(x => x.goalId == this.taskId)[0];
         this.card = this.cards.filter(x => x.creditCardId == this.task.creditCardId)[0];
         this.taskType = this.settings.taskTypes.filter((x: any) => x.typeKey == this.task.targetType)[0];
+        this.transactions = await this.getTaskTransactions();
     }
 
     public getTaskPercents(): number {
@@ -78,6 +83,11 @@ export class TaskSettingsComponent extends BaseComponent implements OnInit {
         this.card = this.cards.filter(x => x.creditCardId == this.task.creditCardId)[0];
         this.cardId = -1;
         await this.tasksProvider.editTask(this.task);
+    }
+
+    public async getTaskTransactions(){
+        let items = await this.transactionsProvider.getTransactionsForTask(this.taskId);
+        return items.map(x => TransactionModel.Convert(x, this.cards));
     }
 
     public cancelCardChange(){

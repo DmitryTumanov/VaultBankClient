@@ -277,3 +277,15 @@ div.task-description table {
 .description.card-description .edit-controls > i {
     color: #fff135 !important;
 }
+
+.page-header{
+    color: #0288D1;
+}
+
+.empty{
+    color: #757575;
+}
+
+.pre-loader{
+    background: rgba(255, 255, 255, 0.37);
+}
