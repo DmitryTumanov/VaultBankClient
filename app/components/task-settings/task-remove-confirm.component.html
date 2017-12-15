@@ -1,0 +1,16 @@
+<div id="modal" class="modal" materialize="modal" [materializeParams]="modalParams" [materializeActions]="modalAction">
+    <div class="modal-content">
+        <h4>{{translator.deleteTaskTitleFirstPart}}{{task.title}}{{translator.deleteTaskTitleSecondPart}}</h4>
+        <p class="warning">
+            {{translator.deleteTaskDescriptionFirstPart}}{{task.title}}{{translator.deleteTaskDescriptionSecondPart}}
+        </p>
+        <p>Выберите карту, на которую будут перечислены накопленные деньги:</p>
+        <cards-selector (cardChange)="updateTaskCard($event)"></cards-selector>
+    </div>
+    <div class="modal-footer">
+        <a class="btn-flat cancel" (click)="closeModal()">{{translator.cancel}}</a>
+        <button class="modal-action modal-close btn-flat remove"
+           [disabled]="cardId<=0"
+           (click)="removeTask()">{{translator.deleteTitle}}</button>
+    </div>
+</div>

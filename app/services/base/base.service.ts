@@ -3,13 +3,17 @@ import {Http, RequestOptions, Headers} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import {StorageService} from "../storage/storage.service";
 import {SettingsProvider} from "../../providers/settings/settings.provider";
+import {PreLoaderProvider} from "../../providers/preloader/pre-loader.provider";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class BaseService {
 
     constructor(public http: Http,
                 public storage: StorageService,
-                public settings: SettingsProvider) {
+                public settings: SettingsProvider,
+                public pre_loader: PreLoaderProvider,
+                private router: Router,                ) {
     }
 
     public get(url: string): Observable<any> {
@@ -46,6 +50,8 @@ export class BaseService {
     }
 
     private catch(error: any): any {
+        this.pre_loader.stop();
+        this.router.navigateByUrl("/tasks");
         return Observable.throw(error.json().error || 'Server error');
     }
 }

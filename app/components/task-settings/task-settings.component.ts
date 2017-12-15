@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, EventEmitter, OnInit} from "@angular/core";
 import {BaseComponent} from "../base/base.component";
 import {TranslationsProvider} from "../../providers/translations/translations.provider";
 import {SettingsProvider} from "../../providers/settings/settings.provider";
@@ -9,6 +9,7 @@ import {CardModel} from "../../models/card.model";
 import {CardsProvider} from "../../providers/cards/cards.provider";
 import {TransactionsProvider} from "../../providers/transactions/transactions.provider";
 import {TransactionModel} from "../../models/transaction.model";
+import {MaterializeAction} from "angular2-materialize";
 
 @Component({
     selector: "task-settings",
@@ -19,6 +20,7 @@ export class TaskSettingsComponent extends BaseComponent implements OnInit {
     public taskType: any;
     public isOnCardChange: boolean;
     public transactions: TransactionModel[] = [];
+    public modalAction = new EventEmitter<string | MaterializeAction>();
 
     private card: CardModel = new CardModel();
     private cards: CardModel[] = [];
@@ -39,9 +41,10 @@ export class TaskSettingsComponent extends BaseComponent implements OnInit {
 
     async ngOnInit() {
         let tasks = await this.tasksProvider.getTasks();
-        this.cards = await this.cardsProvider.getCards();
+        let cards = await this.cardsProvider.getCards();
         this.task = tasks.filter(x => x.goalId == this.taskId)[0];
-        this.card = this.cards.filter(x => x.creditCardId == this.task.creditCardId)[0];
+        this.card = cards.filter(x => x.creditCardId == this.task.creditCardId)[0];
+        this.cards = cards;
         this.taskType = this.settings.taskTypes.filter((x: any) => x.typeKey == this.task.targetType)[0];
         this.transactions = await this.getTaskTransactions();
     }
@@ -50,7 +53,7 @@ export class TaskSettingsComponent extends BaseComponent implements OnInit {
         if (!this.task.moneyCurrent) {
             return 0;
         }
-        return +(this.task.moneyCurrent * 100 / this.task.moneyTarget).toFixed(2);
+        return +(this.task.moneyCurrent * 100 / this.task.moneyTarget).toFixed(1);
     }
 
     public getTaskImage(): string {
@@ -72,25 +75,25 @@ export class TaskSettingsComponent extends BaseComponent implements OnInit {
         return "red";
     }
 
-    public changeCard(){
+    public changeCard() {
         this.isOnCardChange = true;
         this.cardId = this.task.creditCardId;
     }
 
-    public async saveNewCard(){
+    public saveNewCard() {
         this.isOnCardChange = false;
         this.task.creditCardId = this.cardId;
         this.card = this.cards.filter(x => x.creditCardId == this.task.creditCardId)[0];
         this.cardId = -1;
-        await this.tasksProvider.editTask(this.task);
+        this.tasksProvider.editTask(this.task);
     }
 
-    public async getTaskTransactions(){
+    public async getTaskTransactions() {
         let items = await this.transactionsProvider.getTransactionsForTask(this.taskId);
         return items.map(x => TransactionModel.Convert(x, this.cards));
     }
 
-    public cancelCardChange(){
+    public cancelCardChange() {
         this.isOnCardChange = false;
         this.card = this.cards.filter(x => x.creditCardId == this.task.creditCardId)[0];
         this.cardId = -1;
@@ -99,5 +102,9 @@ export class TaskSettingsComponent extends BaseComponent implements OnInit {
     public updateTaskCard(cardId: number) {
         this.cardId = cardId;
         this.card = this.cards.filter(x => x.creditCardId == this.cardId)[0];
+    }
+
+    public removeTask() {
+        this.modalAction.emit({action: "modal", params: ['open']});
     }
 }

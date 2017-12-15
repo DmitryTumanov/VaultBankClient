@@ -4,7 +4,6 @@ import {BaseService} from "../base/base.service";
 
 @Injectable()
 export class CardsService extends BaseService{
-    public cards: any;
 
     public getCards(userName: string):Promise<CardModel[]>{
         return new Promise((resolve, reject) => {
@@ -26,7 +25,7 @@ export class CardsService extends BaseService{
 
     public removeCard(card: CardModel):Promise<boolean>{
         return new Promise((resolve, reject) => {
-            this.deleteAuthorized(this.settings.cardRemovePath+"?cardId="+card.creditCardId)
+            this.deleteAuthorized(this.settings.cardRemovePath+"/"+card.creditCardId)
                 .subscribe((response: boolean) => {
                     resolve(response);
                 });

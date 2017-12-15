@@ -65,6 +65,7 @@ import {CardTypesFilterComponent} from "./components/card-types/card-types-filte
 import {TaskSettingsComponent} from "./components/task-settings/task-settings.component";
 import {TransactionsTableComponent} from "./components/transactions/transactions-table/transactions-table.component";
 import {TasksSelectorComponent} from "./components/tasks-selector/tasks-selector.component";
+import {TaskRemoveConfirmComponent} from "./components/task-settings/task-remove-confirm.component";
 
 const appRoutes: Routes = [
     {path: '', component: LoginFirstStepComponent},
@@ -128,7 +129,8 @@ const appRoutes: Routes = [
         CardTypesFilterComponent,
         TaskSettingsComponent,
         TransactionsTableComponent,
-        TasksSelectorComponent
+        TasksSelectorComponent,
+        TaskRemoveConfirmComponent
     ],
     bootstrap: [AppComponent],
     providers: [

@@ -31,4 +31,13 @@ export class TasksService extends BaseService {
                 });
         });
     }
+
+    public removeCard(cardId: number, goalId: number):Promise<boolean>{
+        return new Promise((resolve, reject) => {
+            this.postAuthorized(this.settings.taskDeletePath, {"goalId": goalId, "cardId": cardId})
+                .subscribe((response: boolean) => {
+                    resolve(response);
+                });
+        });
+    }
 }

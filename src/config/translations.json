@@ -99,12 +99,28 @@
     "EN": "\"? All assigned tasks will be paused.",
     "RU": "\"? Все закрепленные за данной картой задачи будут приостановлены."
   },
+  "deleteTaskDescriptionFirstPart":{
+    "EN": "Do you really want to delete task \"",
+    "RU": "Вы уверены что хотите удалить накопление \""
+  },
+  "deleteTaskDescriptionSecondPart":{
+    "EN": "\"? All accumulated funds will be sent to the card you have chosen.",
+    "RU": "\"? Все накопленные средства будут отправлены на выбранную вами карту."
+  },
   "deleteTitleFirstPart":{
     "EN": "Delete \"",
     "RU": "Удаление карты \""
   },
   "deleteTitleSecondPart":{
     "EN": "\" card",
+    "RU": "\""
+  },
+  "deleteTaskTitleFirstPart":{
+    "EN": "Delete \"",
+    "RU": "Удаление накопления \""
+  },
+  "deleteTaskTitleSecondPart":{
+    "EN": "\" task",
     "RU": "\""
   },
   "cancel":{

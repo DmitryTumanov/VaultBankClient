@@ -66,6 +66,7 @@ p.description {
 }
 
 a.remove,
+button.remove,
 div.plastic-card div.card-action  a.remove {
     color: #ff331f !important;
 }
@@ -286,6 +287,6 @@ div.task-description table {
     color: #757575;
 }
 
-.pre-loader{
-    background: rgba(255, 255, 255, 0.37);
+my-app{
+    background: linear-gradient(to right, #f2fcfe, #95CBFF, #f2fcfe);
 }

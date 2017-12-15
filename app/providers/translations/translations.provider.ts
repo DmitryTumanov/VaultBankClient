@@ -33,6 +33,10 @@ export class TranslationsProvider extends BaseTranslationsProvider{
     get deleteDescriptionSecondPart(){ return this.get("deleteDescriptionSecondPart");}
     get deleteTitleFirstPart(){ return this.get("deleteTitleFirstPart");}
     get deleteTitleSecondPart(){ return this.get("deleteTitleSecondPart");}
+    get deleteTaskDescriptionFirstPart(){ return this.get("deleteDescriptionFirstPart");}
+    get deleteTaskDescriptionSecondPart(){ return this.get("deleteDescriptionSecondPart");}
+    get deleteTaskTitleFirstPart(){ return this.get("deleteTitleFirstPart");}
+    get deleteTaskTitleSecondPart(){ return this.get("deleteTitleSecondPart");}
     get cancel(){ return this.get("cancel");}
     get deleteTitle(){ return this.get("delete");}
     get settingsTitle(){ return this.get("settings");}

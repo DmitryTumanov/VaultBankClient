@@ -85,7 +85,7 @@ export class NewTaskComponent extends BaseComponent implements OnInit {
         model.moneyTarget = this.secondStepValidator.value.moneyTarget;
         model.moneyPerMonth = this.secondStepValidator.value.moneyPerMonth;
         let day = +$(".range-field .thumb .value").text();
-        model.chargeDate = new Date(new Date().setDate(day));
+        model.chargeDate = day;
         return model;
     }
 

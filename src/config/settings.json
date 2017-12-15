@@ -32,21 +32,21 @@
   ],
   "taskTypes": [
     {
-      "typeKey": 0,
+      "typeKey": 7,
       "monthsNumber": 6,
       "translateKey": "smallTask",
       "color": "#5eff69",
       "descriptionKey": "smallTaskDescription"
     },
     {
-      "typeKey": 1,
+      "typeKey": 11,
       "monthsNumber": 24,
       "translateKey": "mediumTask",
       "color": "#fff135",
       "descriptionKey": "mediumTaskDescription"
     },
     {
-      "typeKey": 2,
+      "typeKey": 14,
       "monthsNumber": 60,
       "translateKey": "longTask",
       "color": "#ff3d3d",
@@ -54,7 +54,7 @@
     }
   ],
   "paths":{
-    "mainPath":"http://localhost:50820/",
+    "mainPath":"https://vaultbank.blackstar.by/",
     "authorizationPrefix":"auth",
     "authorizationSecondStep":"auth/register/step-one",
     "authorizationThirdStep":"auth/register/step-two",
@@ -65,8 +65,10 @@
     "tasksPath": "goals",
     "taskAddPath":"goals/add",
     "taskEditPath":"goals/edit",
+    "taskDeletePath":"goals/delete",
     "transactionsPath": "transactions",
     "transactionsGetByCardPath":"transactions/bycard",
-    "transactionsGetByTaskPath":"transactions/bygoal"
+    "transactionsGetByTaskPath":"transactions/bygoal",
+    "transactionsRetry":"transactions/retry"
   }
 }

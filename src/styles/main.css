@@ -493,6 +493,13 @@ a.height-trigger > i {
 
 ul.collection li.collection-item.avatar.full {
     min-height: 284px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+ul.collection li.collection-item.avatar.full .content p,
+ul.collection li.collection-item.avatar.full .content span {
+    padding-left: 50px;
 }
 
 .collection-item .content img.circle {
@@ -707,7 +714,7 @@ div.task-description .description.progress-description {
 
 .description.progress-description .deposit-type-view span {
     height: 150px;
-    font-size: 100px;
+    font-size: 80px;
     text-align: center;
 }
 
@@ -771,4 +778,10 @@ div.transactions {
 
 div.main-container.loaded .colored{
     filter: blur(2px);
+}
+
+my-app{
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
