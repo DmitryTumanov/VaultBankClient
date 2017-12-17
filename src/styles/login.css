@@ -12,7 +12,7 @@ div.main-container .login-container form {
 div.main-container .login-container > .row {
     margin: auto auto 10px auto;
     box-shadow: 0 0 15px #bfbfbf;
-    max-width: 400px;
+    max-width: 450px;
 }
 
 div.main-container .login-container form img.circle {

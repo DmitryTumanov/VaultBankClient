@@ -1,5 +1,5 @@
 export class LoginSecondStepResponceModel{
-    public isEmailExist: boolean;
+    public isEmailOrPhoneExists: boolean;
     public userNameNotFound: boolean;
     public isCompleted: boolean;
 }

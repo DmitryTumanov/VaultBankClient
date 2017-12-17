@@ -1,11 +1,15 @@
 {
-  "name": "your-app",
+  "name": "VaultBank",
+  "productName": "VaultBank",
+  "description": "VaultBank Client App",
   "version": "0.1.0",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "test": "karma start",
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
+    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "package-win": "electron-packager . --electron-version=1.6.11 --overwrite --platform=win32 --arch=ia32 --icon=src/images/main-icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"VaultBank\"",
+    "create-installer-win": "node installers/windows/createinstaller.js"
   },
   "license": "MIT",
   "dependencies": {
@@ -35,6 +39,8 @@
     "angular2-template-loader": "^0.6.0",
     "awesome-typescript-loader": "^3.0.4",
     "css-loader": "^0.26.1",
+    "electron-packager": "^10.1.0",
+    "electron-winstaller": "^2.6.3",
     "extract-text-webpack-plugin": "2.0.0-beta.5",
     "file-loader": "^0.9.0",
     "html-loader": "^0.4.3",

@@ -3,7 +3,7 @@ export class TaskModel {
     public title: string;
     public description: string;
     public targetEnd: Date;
-    public chargeDate: Date;
+    public chargeDate: number;
     public moneyTarget: number;//
     public moneyCurrent: number;//
     public moneyPerMonth: number;//

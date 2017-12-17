@@ -84,11 +84,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 div.task-description {
-    padding: 20px;
-    background-color: #f3f3f3;
     margin: 30px auto;
     display: inline-block;
-    width: 80%;
+    width: 90%;
     height: 100%;
     border-radius: 5px;
     box-shadow: 0 0 15px #bfbfbf;
@@ -104,8 +102,10 @@ div.task-description > .title {
 }
 
 div.task-description .progress {
-    height: 35px;
-    margin: 0 10px;
+    height: 15px;
+    margin: 0;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
 }
 
 div.task-description .progress progress {
@@ -125,31 +125,10 @@ div.task-description .description .title i {
     cursor: pointer;
 }
 
-div.task-description progress::-webkit-progress-bar {
-    background-color: #dedee1;
-}
-
-div.task-description progress::-webkit-progress-value {
-    background-color: #b6b6b9;
-}
-
-div.task-description progress.red::-webkit-progress-value {
-    background-color: rgba(222, 41, 40, 0.7);
-}
-
-div.task-description progress.blue::-webkit-progress-value {
-    background-color: rgba(0, 71, 212, 0.62);
-}
-
-div.task-description progress.green::-webkit-progress-value {
-    background-color: rgba(60, 224, 0, 0.64);
-}
-
 div.task-description .progress span.progress-title {
     top: -105%;
     position: relative;
     font-weight: 600;
-    color: white;
     display: block;
     left: 0;
     text-align: center;
@@ -180,13 +159,11 @@ div.task-description .history .title {
 }
 
 div.task-description table {
-    background-color: #ffffff;
-    box-shadow: 0 0 1px;
     border-radius: 5px;
 }
 
 div.task-description div.history-table {
-    padding: 10px;
+    padding: 0 10px 10px;
 }
 
 div.task-description .deposit-type-view {
@@ -202,12 +179,24 @@ div.task-description .deposit-type-view img {
     margin: 20px 0;
     height: 150px;
     width: 150px;
-    border-radius: 50%;
 }
 
 div.task-description .title {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+}
+
+div.task-description .title h4 {
     margin-bottom: 0;
-    font-size: 20px;
+}
+
+div.task-description .title p {
+    margin: 0;
 }
 
 div.task-container {
@@ -217,6 +206,16 @@ div.task-container {
 
 div.task-description div.progress-container .title {
     padding: 0 0 10px 10px;
+}
+
+div.task-description .title i.back {
+    display: block;
+    position: absolute;
+    font-size: 26px;
+    width: 26px;
+    margin: 20px 0 0 20px;
+    top: 30px;
+    cursor: pointer;
 }
 
 img.active-card-type {
@@ -343,7 +342,7 @@ div.alert > span.alert-text {
 
 textarea.validate,
 input.validate,
-input#date{
+input#date {
     margin: 0 0 5px 0 !important;
 }
 
@@ -357,73 +356,73 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-.task-type-selector ul.collapsible{
+.task-type-selector ul.collapsible {
     width: 80%;
     margin: 5px auto 20px;
 }
 
-.task-type-selector h6{
+.task-type-selector h6 {
     width: 80%;
     margin: 10px auto;
 }
 
-.task-type-selector ul.collapsible li .collapsible-header{
+.task-type-selector ul.collapsible li .collapsible-header {
     cursor: pointer !important;
 }
 
-.task-type-selector ul.collapsible li.inactive .collapsible-header{
+.task-type-selector ul.collapsible li.inactive .collapsible-header {
     cursor: default !important;
 }
 
-.task-type-selector ul.collapsible li.inactive .collapsible-body{
+.task-type-selector ul.collapsible li.inactive .collapsible-body {
     display: none !important;
 }
 
-.task-type-selector ul.collapsible li .collapsible-body{
+.task-type-selector ul.collapsible li .collapsible-body {
     padding: 5px 25px;
 }
 
-.task-type-selector ul.collapsible li .collapsible-body p{
+.task-type-selector ul.collapsible li .collapsible-body p {
     margin-top: 0;
 }
 
-.confirm-task-type{
+.confirm-task-type {
     margin: auto;
     width: auto;
     display: block;
 }
 
-ul.stepper li.step:first-child .step-actions{
+ul.stepper li.step:first-child .step-actions {
     justify-content: flex-end !important;
 }
 
-ul.stepper li.step:last-child .step-actions{
+ul.stepper li.step:last-child .step-actions {
     justify-content: flex-start !important;
 }
 
-ul.stepper .step-actions{
+ul.stepper .step-actions {
     justify-content: space-between !important;
 }
 
-ul.stepper + .form-group{
+ul.stepper + .form-group {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.picker__today{
+.picker__today {
     display: none;
 }
 
-ul.collection{
+ul.collection {
     border: 0;
 }
 
-ul.collection li.collection-item{
+ul.collection li.collection-item {
     margin: 5px 0;
 }
 
-li.collection-item .after{
+li.collection-item .after {
     content: '';
     position: absolute;
     right: 0;
@@ -431,7 +430,7 @@ li.collection-item .after{
     top: 90%;
 }
 
-li.collection-item .before{
+li.collection-item .before {
     content: '';
     position: absolute;
     left: 0;
@@ -439,11 +438,11 @@ li.collection-item .before{
     top: 90%;
 }
 
-li.collection-item .content .material-icons{
+li.collection-item .content .material-icons {
     display: none;
 }
 
-li.collection-item:not(.paused):hover .content .material-icons{
+li.collection-item:not(.paused):hover .content .material-icons {
     display: block;
     cursor: pointer;
 }
@@ -452,11 +451,11 @@ li.collection-item.paused:not(:hover) div.content {
     filter: blur(2px);
 }
 
-li.collection-item div.task-pause{
+li.collection-item div.task-pause {
     display: none;
 }
 
-li.collection-item.paused div.task-pause{
+li.collection-item.paused div.task-pause {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -469,11 +468,11 @@ li.collection-item.paused div.task-pause{
     font-size: x-large;
 }
 
-li.collection-item.paused div.task-pause span{
+li.collection-item.paused div.task-pause span {
     cursor: pointer;
 }
 
-a.height-trigger{
+a.height-trigger {
     position: absolute;
     width: 100%;
     left: 0;
@@ -487,42 +486,49 @@ ul.collection li.collection-item.avatar .title {
     font-size: 18px;
 }
 
-a.height-trigger > i{
+a.height-trigger > i {
     font-size: 30px;
     line-height: 10px;
 }
 
-ul.collection li.collection-item.avatar.full{
+ul.collection li.collection-item.avatar.full {
     min-height: 284px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-.collection-item .content img.circle{
+ul.collection li.collection-item.avatar.full .content p,
+ul.collection li.collection-item.avatar.full .content span {
+    padding-left: 50px;
+}
+
+.collection-item .content img.circle {
     border-radius: 0;
 }
 
-.task-key{
+.task-key {
     text-align: right;
     padding-right: 5px !important;
 }
 
-.task-value{
+.task-value {
     padding-left: 0 !important;
 }
 
-.task-value span{
+.task-value span {
     padding-left: .75rem !important;
 }
 
-.task-content{
+.task-content {
     margin-bottom: 0;
     margin-top: 40px;
 }
 
-.task-content .row{
+.task-content .row {
     margin-bottom: 10px;
 }
 
-.task-avg-value{
+.task-avg-value {
     position: absolute;
     width: 100%;
     height: 10%;
@@ -534,11 +540,11 @@ ul.collection li.collection-item.avatar.full{
     flex-direction: column;
 }
 
-.row.textarea{
+.row.textarea {
     margin-top: 20px;
 }
 
-.range-field{
+.range-field {
     width: 100%;
 }
 
@@ -547,7 +553,7 @@ ul.collection li.collection-item.avatar.full{
     box-shadow: 0 0 0 0 !important;
 }
 
-.range-field input[type=range]+.thumb.active .value{
+.range-field input[type=range] + .thumb.active .value {
     color: #fff;
     margin-left: -1px;
     margin-top: -1px;
@@ -555,19 +561,227 @@ ul.collection li.collection-item.avatar.full{
 }
 
 .heading h5,
-.heading p{
+.heading p {
     text-align: center;
 }
 
-.top-container.coming-soon{
+.top-container.coming-soon {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 }
 
-.credit_cards_selector{
+.credit_cards_selector {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+}
+
+.search {
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px 0 40px;
+}
+
+.search > .row {
+    padding: 0 0 10px;
+    margin: auto;
+}
+
+.search .input-field i.search-icon {
+    line-height: 55px;
+    padding-left: 10px;
+}
+
+.search .input-field {
+    margin: 0 auto 0 0;
+}
+
+.search.stick .input-field {
+    width: 100%;
+    margin: auto;
+}
+
+.search .input-field input {
+    margin-bottom: 0;
+}
+
+.task-type {
+    padding: 5px;
+}
+
+p.radio {
+    text-align: center;
+}
+
+.tasks.container,
+.cards.container {
+    width: 90%;
+}
+
+.transactions.container {
+    width: 95%;
+}
+
+.tasks.container .search .col,
+.cards.container .search .col {
+    padding: 10px;
+}
+
+.row.page-header {
+    text-align: center;
+}
+
+.row.task-content .col {
+    padding: 0;
+}
+
+.input-field input#search-field {
+    width: 80%;
+    margin-left: 50px;
+}
+
+.cards-list {
+    margin-top: 10px;
+}
+
+.task-settings-content {
+    padding: 5px 20px 0;
+}
+
+div.task-description .description p {
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+div.task-description .description.card-description {
+    margin-top: 0;
+}
+
+.description.card-description button {
+    margin: auto;
+    display: block;
+}
+
+.description.card-description .edit-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.description.card-description .edit-controls i {
+    cursor: pointer;
+    line-height: 35px;
+}
+
+.description.card-description .edit-controls button {
+    margin: 0;
+}
+
+.description.progress-description .deposit-type-view,
+.description.card-description .deposit-type-view {
+    flex-direction: column;
+}
+
+.description.card-description .deposit-type-view img {
+    margin: 0 auto;
+}
+
+.description.card-description .deposit-type-view p {
+    text-align: center;
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.task-type-icon {
+    height: 150px;
+    width: 150px;
+    font-size: 100px;
+    line-height: 150px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+
+div.task-description .description.progress-description {
+    margin-top: 15px;
+}
+
+.description.progress-description .deposit-type-view p {
+    margin-bottom: 0;
+}
+
+.description.progress-description .deposit-type-view span {
+    height: 150px;
+    font-size: 80px;
+    text-align: center;
+}
+
+.task-actions {
+    margin-top: 30px;
+}
+
+div.history p:first-child {
+    text-align: center;
+    margin: 20px 0 0;
+    font-size: 18px;
+}
+
+div.transactions {
+    padding-top: 20px;
+}
+
+.transactions .card-name img{
+    height: 30px;
+}
+
+.table-wrapper .transactions-table {
+    padding: 10px;
+}
+
+.table-wrapper .transactions-table td.card-name > div,
+.table-wrapper .transactions-table td.task-name > div,
+.table-wrapper .transactions-table td.transaction-status > div {
+    display: flex;
+}
+
+.table-wrapper .transactions-table td.transaction-status.retried i,
+.table-wrapper .transactions-table td.transaction-status.valid i {
+    display: none;
+}
+
+.table-wrapper .transactions-table td.transaction-status.pause i {
+    display: block;
+}
+
+.table-wrapper .transactions-table td.card-name span{
+    padding: 5px;
+}
+
+.transactions .table-wrapper {
+    border-radius: 10px;
+}
+
+.transactions .search {
+    margin-top: 0;
+}
+
+.transactions .search .row .col:first-child {
+    margin-top: 10px;
+}
+
+.login-container .row.text-input {
+    width: 90%;
+    margin: 10px auto;
+}
+
+div.main-container.loaded .colored{
+    filter: blur(2px);
+}
+
+my-app{
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }

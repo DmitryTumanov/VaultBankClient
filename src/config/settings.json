@@ -14,44 +14,50 @@
     {
       "typeKey": 0,
       "image": "visa.png",
-      "smallImage": "visa_small.png"
+      "smallImage": "visa_small.png",
+      "translateKey": "visa"
     },
     {
       "typeKey": 1,
       "image": "mastercard.png",
-      "smallImage": "mastercard_small.png"
+      "smallImage": "mastercard_small.png",
+      "translateKey": "mastercard"
     },
     {
       "typeKey": 2,
       "image": "belcard.png",
-      "smallImage": "belcard_small.png"
+      "smallImage": "belcard_small.png",
+      "translateKey": "belcard"
     }
   ],
   "taskTypes": [
     {
-      "typeKey": 0,
-      "monthsNumber": 6,
+      "typeKey": 7,
+      "monthsNumber": 3,
+      "percentCloseNumber": 66,
       "translateKey": "smallTask",
       "color": "#5eff69",
       "descriptionKey": "smallTaskDescription"
     },
     {
-      "typeKey": 1,
+      "typeKey": 11,
       "monthsNumber": 24,
+      "percentCloseNumber": 60,
       "translateKey": "mediumTask",
       "color": "#fff135",
       "descriptionKey": "mediumTaskDescription"
     },
     {
-      "typeKey": 2,
+      "typeKey": 14,
       "monthsNumber": 60,
+      "percentCloseNumber": 70,
       "translateKey": "longTask",
       "color": "#ff3d3d",
       "descriptionKey": "longTaskDescription"
     }
   ],
   "paths":{
-    "mainPath":"http://localhost:50820/",
+    "mainPath":"https://vaultbank.blackstar.by/",
     "authorizationPrefix":"auth",
     "authorizationSecondStep":"auth/register/step-one",
     "authorizationThirdStep":"auth/register/step-two",
@@ -60,6 +66,12 @@
     "cardAddPath":"cards/add",
     "cardRemovePath":"cards/delete",
     "tasksPath": "goals",
-    "taskAddPath":"goals/add"
+    "taskAddPath":"goals/add",
+    "taskEditPath":"goals/edit",
+    "taskDeletePath":"goals/delete",
+    "transactionsPath": "transactions",
+    "transactionsGetByCardPath":"transactions/bycard",
+    "transactionsGetByTaskPath":"transactions/bygoal",
+    "transactionsRetry":"transactions/retry"
   }
 }

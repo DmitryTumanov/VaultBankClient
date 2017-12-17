@@ -13,22 +13,27 @@
                         Введите логин и пароль для авторизации в системе.</p>
                 </div>
             </div>
-            <div class='row'>
+            <div class='row text-input'>
                 <div class='input-field col s12'>
-                    <input class='validate' type="text" name='login' id='login' [(ngModel)]="model.login"/>
+                    <input class='validate' type="text" name='login' id='login' [formControl]="getControl('login')"/>
                     <label for='login'>{{translator.loginEnter}}</label>
+                    <error-field [expression]="validateControl('login')"
+                                 [text]="'Login required'"></error-field>
                 </div>
             </div>
-            <div class='row'>
+            <div class='row text-input'>
                 <div class='input-field col s12'>
-                    <input class='validate' type='password' name='password' id='password' [(ngModel)]="model.password"/>
+                    <input class='validate' type='password' name='password' id='password' [formControl]="getControl('password')"/>
                     <label for='password'>{{translator.passwordEnter}}</label>
+                    <error-field [expression]="validateControl('password')"
+                                 [text]="'Password required'"></error-field>
                 </div>
             </div>
             <error-field [expression]="fatalError" [text]="fatalError"></error-field>
             <br/>
-            <div class='row'>
-                <button name='btn_login' class='col s12 btn btn-large waves-effect blue' (click)="login()">
+            <div class='row text-input'>
+                <button name='btn_login' class='col s12 btn btn-large waves-effect blue' [disabled]="validator.invalid"
+                        (click)="login()">
                     <i class="material-icons">done</i>
                 </button>
             </div>

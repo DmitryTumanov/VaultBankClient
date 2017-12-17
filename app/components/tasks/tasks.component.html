@@ -1,23 +1,43 @@
 <div class="container top-container tasks">
-    <div class="search">
-        <div class="row">
-            <div class="col s12">
-                <div class="input-field">
-                    <i class="material-icons prefix search">search</i>
-                    <input id="search-field" [(ngModel)]="searchValue">
+    <div class="row page-header">
+        <h4>Ваши накопления</h4>
+    </div>
+    <div class="row">
+        <div class="col s8 m8 l8">
+            <ul class="collection">
+                <task-item [card]="getCardForTask(task.creditCardId)" *ngFor="let task of getFilteredTasks()"
+                           [task]="task"></task-item>
+            </ul>
+            <div *ngIf="getFilteredTasks() == undefined || getFilteredTasks().length == 0">
+                <div class="empty">
+                    <h5 *ngIf="!searchValue">{{translator.tasksPageEmptyTitle}}</h5>
+                    <h5 *ngIf="searchValue">{{translator.tasksFilterEmpty}}</h5>
                 </div>
             </div>
         </div>
-    </div>
-    <h5>{{translator.tasksPageTitle}}</h5>
-    <ul class="collection">
-        <task-item [card]="getCardForTask(task.creditCardId)" *ngFor="let task of getFilteredTasks()"
-                   [task]="task"></task-item>
-    </ul>
-    <div *ngIf="getFilteredTasks() == undefined || getFilteredTasks().length == 0">
-        <div class="empty">
-            <h5 *ngIf="!searchValue">{{translator.tasksPageEmptyTitle}}</h5>
-            <h5 *ngIf="searchValue">{{translator.tasksFilterEmpty}}</h5>
+        <div class="col s4 m4 l4">
+            <div class="search">
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <div class="input-field">
+                            <i class="material-icons prefix search-icon">search</i>
+                            <input id="search-field" [placeholder]="'Введите имя накопления'" [(ngModel)]="searchValue">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <h6>Выберите тип накопления:</h6>
+                        <task-types-filter (taskTypeChange)="updateTaskTypeFilter($event)"></task-types-filter>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <h6>Выберите кредитную карту:</h6>
+                        <cards-selector (cardChange)="updateTaskCard($event)" [isDefault]="true"></cards-selector>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

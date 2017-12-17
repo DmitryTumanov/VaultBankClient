@@ -9,6 +9,7 @@ import {LoginResponseModel} from "../../models/responces/login-response.model";
 import {isNullOrUndefined} from "util";
 import {StorageService} from "../../services/storage/storage.service";
 import {PreLoaderProvider} from "../../providers/preloader/pre-loader.provider";
+import {ValidatorsProvider} from "../../providers/validators/validators.provider";
 
 @Component({
     selector: "login-first-step",
@@ -17,8 +18,10 @@ import {PreLoaderProvider} from "../../providers/preloader/pre-loader.provider";
 export class LoginFirstStepComponent extends BaseComponent implements OnInit{
     public model: LoginFirstStepModel;
     public fatalError: string;
+    public validator: any;
 
-    constructor(translator: TranslationsProvider,
+    constructor(validatorProvider: ValidatorsProvider,
+                translator: TranslationsProvider,
                 settings: SettingsProvider,
                 private authorizationProvider: AuthorizationProvider,
                 private router: Router,
@@ -26,6 +29,7 @@ export class LoginFirstStepComponent extends BaseComponent implements OnInit{
                 private preLoader: PreLoaderProvider) {
         super(translator, settings);
         this.model = new LoginFirstStepModel();
+        this.validator = validatorProvider.firstAuthFormValidator;
     }
 
     ngOnInit(){
@@ -36,6 +40,7 @@ export class LoginFirstStepComponent extends BaseComponent implements OnInit{
 
     public login(){
         this.preLoader.start();
+        this.model = this.validator.value;
         this.authorizationProvider.authorizeFirstStep(this.model).then((result:LoginResponseModel)=>{
             this.preLoader.stop();
             if(isNullOrUndefined(result) || result.isError){
@@ -50,5 +55,13 @@ export class LoginFirstStepComponent extends BaseComponent implements OnInit{
             }
             this.fatalError = "Fatal Error";
         });
+    }
+
+    public getControl(key: string): any {
+        return this.validator.controls[key];
+    }
+
+    public validateControl(key: string): any {
+        return !this.validator.controls[key].valid && this.validator.controls[key].touched;
     }
 }

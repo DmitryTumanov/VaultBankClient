@@ -12,34 +12,52 @@
                     <p class="description">Зарегистрируйтесь чтобы начать использовать приложение.</p>
                 </div>
             </div>
-            <div class='row'>
+            <div class='row text-input'>
                 <div class='input-field col s12'>
                     <input disabled class='validate' [value]="model.login" name='login' id='login'/>
                     <label for='login' class="active">{{translator.loginDisabledEnter}}</label>
                 </div>
             </div>
-            <div class='row'>
+            <div class='row text-input'>
                 <div class='input-field col s12'>
-                    <input class='validate' type='password' name='password' id='password' [(ngModel)]="model.password"/>
+                    <input class='validate' type='password' name='password' id='password' [formControl]="getControl('password')"/>
                     <label for='password'>{{translator.loginNewEnter}}</label>
+                    <error-field [expression]="validateControl('password')"
+                                 [text]="'Password required'"></error-field>
                 </div>
             </div>
-            <div class='row'>
+            <div class='row text-input'>
                 <div class='input-field col s12'>
-                    <input class='validate' type='password' name='password' id='passwordCheck' [(ngModel)]="model.passwordCheck"/>
+                    <input class='validate' type='password' name='password' id='passwordCheck' [formControl]="getControl('passwordCheck')"/>
                     <label for='passwordCheck'>{{translator.confirmLoginNewEnter}}</label>
+                    <error-field [expression]="validateControl('passwordCheck')"
+                                 [text]="'Password check required'"></error-field>
                 </div>
             </div>
             <div class='row'>
+                <login-type (authTypeChange)="changeAuthType($event)"></login-type>
+            </div>
+            <div class='row text-input' *ngIf="validator.controls.authModelType.value == 0">
                 <div class='input-field col s12'>
-                    <input class='validate' type='email' name='email' id='email' [(ngModel)]="model.twoWayAuthTarget"/>
+                    <input class='validate' type='email' name='email' id='email' [formControl]="getControl('email')"/>
                     <label for='email'>{{translator.emailEnter}}</label>
+                    <error-field [expression]="validateControl('email')"
+                                 [text]="'Email required'"></error-field>
+                </div>
+            </div>
+            <div class='row text-input' *ngIf="validator.controls.authModelType.value == 1">
+                <div class='input-field col s12'>
+                    <input class='validate' type='text' name='telephone' id='telephone' [formControl]="getControl('telephone')"/>
+                    <label for='email'>Telephone</label>
+                    <error-field [expression]="validateControl('telephone')"
+                                 [text]="'Telephone required'"></error-field>
                 </div>
             </div>
             <error-field [expression]="fatalError" [text]="fatalError"></error-field>
             <br/>
-            <div class='row'>
-                <button name='btn_login' class='col s12 btn btn-large waves-effect blue' (click)="login()">
+            <div class='row text-input'>
+                <button name='btn_login' class='col s12 btn btn-large waves-effect blue'
+                        (click)="login()" [disabled]="!isFormValid()">
                     <i class="material-icons">done</i>
                 </button>
             </div>

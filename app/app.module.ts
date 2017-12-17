@@ -55,6 +55,17 @@ import {NewTaskStepOneComponent} from "./components/new-task/new-task-step-one.c
 import {NewTaskStepTwoComponent} from "./components/new-task/new-task-step-two.component";
 import {TaskItemComponent} from "./components/tasks/task-item.component";
 import {ComingSoonComponent} from "./components/coming-soon/coming-soon.component";
+import {TransactionsComponent} from "./components/transactions/transactions.component";
+import {TransactionsService} from "./services/transactions/transactions.service";
+import {TransactionsProvider} from "./providers/transactions/transactions.provider";
+import {TaskTypesFilterComponent} from "./components/task-types/task-types-filter.component";
+import {AuthFormsValidator} from "./validators/auth-forms.validator";
+import {LoginTypeComponent} from "./components/login/login-type.component";
+import {CardTypesFilterComponent} from "./components/card-types/card-types-filter.component";
+import {TaskSettingsComponent} from "./components/task-settings/task-settings.component";
+import {TransactionsTableComponent} from "./components/transactions/transactions-table/transactions-table.component";
+import {TasksSelectorComponent} from "./components/tasks-selector/tasks-selector.component";
+import {TaskRemoveConfirmComponent} from "./components/task-settings/task-remove-confirm.component";
 
 const appRoutes: Routes = [
     {path: '', component: LoginFirstStepComponent},
@@ -66,8 +77,8 @@ const appRoutes: Routes = [
     {path: 'login-third-step/:login/:email', component: LoginThirdStepComponent},
     {path: 'login-key-step/:login', component: LoginKeyStepComponent},
     {path: 'settings', component: ComingSoonComponent},
-    {path: 'transactions', component: ComingSoonComponent},
-    {path: 'task-settings', component: ComingSoonComponent},
+    {path: 'transactions', component: TransactionsComponent},
+    {path: 'task-settings/:taskId', component: TaskSettingsComponent},
     {path: 'card-settings', component: ComingSoonComponent},
 ];
 
@@ -111,7 +122,15 @@ const appRoutes: Routes = [
         NewTaskStepOneComponent,
         NewTaskStepTwoComponent,
         TaskItemComponent,
-        ComingSoonComponent
+        ComingSoonComponent,
+        TransactionsComponent,
+        TaskTypesFilterComponent,
+        LoginTypeComponent,
+        CardTypesFilterComponent,
+        TaskSettingsComponent,
+        TransactionsTableComponent,
+        TasksSelectorComponent,
+        TaskRemoveConfirmComponent
     ],
     bootstrap: [AppComponent],
     providers: [
@@ -134,6 +153,9 @@ const appRoutes: Routes = [
         BaseService,
         PreLoaderProvider,
         TaskFormValidator,
+        TransactionsService,
+        TransactionsProvider,
+        AuthFormsValidator,
         { provide: APP_INITIALIZER, useFactory: (config: AppInitializer) => () => config.load(), deps: [AppInitializer], multi: true }
     ]
 })

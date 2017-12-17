@@ -1,0 +1,7 @@
+<div *ngFor="let cardType of cardTypes" class="task-type">
+    <input type="checkbox"
+           [id]="cardType.typeKey"
+           [checked]="isCardTypeActive(cardType.typeKey)"
+           (click)="updateCardType(cardType.typeKey)"/>
+    <label [for]="cardType.typeKey">{{translator[cardType.translateKey]}}</label>
+</div>

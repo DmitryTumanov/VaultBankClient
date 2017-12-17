@@ -1,0 +1,94 @@
+<div class="container task-container">
+    <div class="task-description">
+        <div class="title">
+            <i class="material-icons back" routerLink="/tasks">arrow_back</i>
+            <h4>{{task.title}}</h4>
+            <p>{{task.description}}</p>
+        </div>
+        <div class="progress">
+            <progress [value]="getTaskPercents()" max="100" class="blue"></progress>
+        </div>
+        <div class="task-settings-content">
+            <div class="row">
+                <div class="col s7 m7 l8">
+                    <ul class="tabs" materialize="tabs">
+                        <li class="tab col s6"><a class="active" href="#main-description">Основные настройки</a></li>
+                        <li class="tab col s3"><a href="#card-description">Карта</a></li>
+                        <li class="tab col s3"><a href="#type-description">Тариф</a></li>
+                    </ul>
+                    <div id="main-description">
+                        <div class="description">
+                            <p>{{translator.moneyTarget}} : <span>{{task.moneyTarget}}</span></p>
+                            <p>{{translator.moneyCurrent}} : <span>{{task.moneyCurrent}}</span></p>
+                            <p>{{translator.moneyPerMonth}} : <span>{{task.moneyPerMonth}}</span></p>
+                            <p>{{translator.targetEnd}} : <span>{{task.targetEnd | date: 'dd/MM/yyyy'}}</span></p>
+                        </div>
+                    </div>
+                    <div id="card-description">
+                        <div class="description card-description">
+                            <div class="deposit-type-view" *ngIf="card">
+                                <img [src]="'images/'+getTaskImage()">
+                                <p *ngIf="!isOnCardChange">{{card.customCardName}}</p>
+                            </div>
+                            <cards-selector (cardChange)="updateTaskCard($event)"
+                                            *ngIf="isOnCardChange"></cards-selector>
+                            <button class="btn waves-effect waves-light blue" (click)="changeCard()"
+                                    *ngIf="!isOnCardChange">
+                                <i class="material-icons right">settings</i>Сменить карту
+                            </button>
+                            <div class="edit-controls" *ngIf="isOnCardChange">
+                                <button class="btn waves-effect waves-light blue"
+                                        [disabled]="task.creditCardId <= 0"
+                                        (click)="saveNewCard()">
+                                    <i class="material-icons right">save</i>Сохранить карту
+                                </button>
+                                <i class="material-icons right" (click)="cancelCardChange()">cancel</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="type-description">
+                        <div class="description card-description" *ngIf="taskType">
+                            <div class="deposit-type-view">
+                                <span class="task-type-icon"
+                                      [style.background]="taskType.color">
+                                    {{translator[taskType.translateKey][0]}}
+                                </span>
+                                <p>{{translator[taskType.translateKey]}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col s5 m5 l4">
+                    <div class="description progress-description">
+                        <div class="deposit-type-view">
+                            <p>Текущий прогресс:</p>
+                            <span class="task-type-progress"
+                                  [ngClass]="getTaskProgressClass()">
+                            {{getTaskPercents()}}%
+                        </span>
+                        </div>
+                        <div class="task-actions">
+                            <button class="btn waves-effect waves-light red" (click)="removeTask()" [disabled]="!isOkToDeleteTask()">
+                                <i class="material-icons right">delete</i>Удалить задачу
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m12 l12 history" *ngIf="transactions && transactions.length > 0">
+                    <p>Транзакции данной задачи:</p>
+                    <div class="transactions">
+                        <div class="table-wrapper">
+                            <transactions-table [transactions]="transactions" [isDefault]="true"></transactions-table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m12 l12 history" *ngIf="!transactions || transactions.length == 0">
+                    <p>Данная задача еще не имеет транзакций</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<task-remove-confirm [task]="task" [modalAction]="modalAction"></task-remove-confirm>

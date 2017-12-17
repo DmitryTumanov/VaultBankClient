@@ -78,16 +78,3 @@ div.tasks > div.task .card > .card-stacked > .card-action > progress.blue::-webk
 div.tasks > div.task .card > .card-stacked > .card-action > progress.green::-webkit-progress-value {
     background-color: rgba(60, 224, 0, 0.64);
 }
-
-div.tasks > div.search .input-field i.search{
-    line-height: 55px;
-}
-
-div.tasks > div.search .input-field {
-    width: 70%;
-    margin: 0 auto;
-}
-
-div.tasks > div.search .input-field input{
-    margin-bottom: 0;
-}

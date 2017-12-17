@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, DoCheck, OnChanges, OnInit} from '@angular/core';
 import {StorageService} from "../../services/storage/storage.service";
 import {SettingsProvider} from "../../providers/settings/settings.provider";
 import {PreLoaderProvider} from "../../providers/preloader/pre-loader.provider";
@@ -7,8 +7,10 @@ import {PreLoaderProvider} from "../../providers/preloader/pre-loader.provider";
     selector: 'my-app',
     templateUrl: './app.component.html'
 })
-export class AppComponent {
-    public isDataPreLoading: boolean;
+export class AppComponent implements OnInit, DoCheck{
+    public mainWindowClass: string = "";
+
+    private isDataPreLoading: boolean;
 
     constructor(private storage: StorageService,
                 private settings: SettingsProvider,
@@ -18,12 +20,39 @@ export class AppComponent {
         });
     }
 
-    isMenuFull(): boolean {
+    ngDoCheck(){
+        this.mainWindowClass = this.getMainWindowClass();
+    }
+
+    ngOnInit(){
+        this.storage.set(this.settings.tokenKey, "");
+        this.storage.set(this.settings.userKey, "");
+        this.storage.set(this.settings.menuStateKey, "");
+        this.mainWindowClass = this.getMainWindowClass();
+    }
+
+    private getMainWindowClass(): string {
+        let resultClass = "";
+        if (this.isMenuFull()) {
+            resultClass += "full ";
+        }
+        if (this.getMenuStatus() == "block") {
+            resultClass += "block ";
+        } else if (this.getMenuStatus() == "shrink") {
+            resultClass += "shrink ";
+        }
+        if (this.isDataPreLoading) {
+            resultClass += "loaded";
+        }
+        return resultClass;
+    }
+
+    private isMenuFull(): boolean {
         let tokenValue = this.storage.get(this.settings.tokenKey);
         return !tokenValue;
     }
 
-    getMenuStatus(): string {
+    private getMenuStatus(): string {
         return this.storage.get(this.settings.menuStateKey);
     }
 }

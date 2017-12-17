@@ -15,7 +15,9 @@
     </div>
 </div>
 <div class="row">
-    <cards-selector (cardChange)="updateTaskCard($event)"></cards-selector>
+    <div class="input-field col s12 m6 l6">
+        <cards-selector (cardChange)="updateTaskCard($event)"></cards-selector>
+    </div>
     <div class="input-field col s12 m6 l6">
         <input id="date" type="text" name="endDate"
                [formControl]="getControl('targetEnd')"
@@ -24,5 +26,21 @@
         <label for="date">{{translator.editTaskEndPlaceholder}}</label>
         <error-field [expression]="validateControl('targetEnd')"
                      [text]="'Task End Date required'"></error-field>
+    </div>
+</div>
+<div class="row">
+    <div class="input-field col s12 m6 l6">
+        <input id="month" type="number" class="validate"
+               [formControl]="getControl('moneyPerMonth')">
+        <label for="month">{{translator.editTaskMonthSumPlaceholder}}</label>
+        <error-field [expression]="validateControl('moneyPerMonth')"
+                     [text]="'Task Month Sum required'"></error-field>
+    </div>
+    <div class="input-field col s12 m6 l6">
+        <input id="sum" type="number" class="validate"
+               [formControl]="getControl('moneyTarget')">
+        <label for="sum">{{translator.editTaskTotalSumPlaceholder}}</label>
+        <error-field [expression]="validateControl('moneyTarget')"
+                     [text]="'Task Total Sum required'"></error-field>
     </div>
 </div>

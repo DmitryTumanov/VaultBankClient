@@ -1,14 +1,14 @@
 body {
-    color: #69B4FD;
+    color: #03A9F4;
 }
 
 .main-container.full .colored {
     background: rgba(23, 146, 255, 0.55);
-    background: linear-gradient(to right, #95CBFF, #f2fcfe);
+    background: linear-gradient(to right, #f2fcfe, #95CBFF, #f2fcfe);
 }
 
 .main-container .colored {
-    background: linear-gradient(to right, #95CBFF, #f2fcfe);
+    background: linear-gradient(to right, #f2fcfe, #95CBFF, #f2fcfe);
 }
 
 textarea.valid,
@@ -34,7 +34,7 @@ div.main-container .login-container form {
 }
 
 nav.main-nav {
-    color: #69B4FD;
+    color: #03A9F4;
     background-color: #FFFFFF !important;
     box-shadow: 0 0 16px 0 #b6b6b9;
 }
@@ -52,7 +52,7 @@ nav.main-nav div.col.menu .collection .collection-item:hover {
 }
 
 footer.page-footer {
-    background-color: #69B4FD;
+    background-color: #0288D1;
 }
 
 p.description {
@@ -66,7 +66,8 @@ p.description {
 }
 
 a.remove,
-div.cards > div.plastic-card div.card-action > a.remove {
+button.remove,
+div.plastic-card div.card-action  a.remove {
     color: #ff331f !important;
 }
 
@@ -86,7 +87,7 @@ div.card:hover:not(.paused) div.item-settings:hover {
     background-color: #607dbf;
 }
 
-div.cards > div.plastic-card .card > .card-stacked > .card-content > p {
+div.plastic-card .card  .card-stacked  .card-content  p {
     color: #bbbd30;
 }
 
@@ -99,7 +100,7 @@ button.btn.btn-default {
     background-color: #bbbd30;
 }
 
-button.btn-flat{
+button.btn-flat {
     color: #bbbd30;
 }
 
@@ -123,57 +124,169 @@ div.alert {
 }
 
 .task-type-selector ul.collapsible li.inactive,
-.task-type-selector ul.collapsible li.inactive .material-icons{
+.task-type-selector ul.collapsible li.inactive .material-icons {
     color: #b6b6b9 !important;
 }
 
-li.collection-item p{
+li.collection-item p {
     color: #bbbd30;
 }
 
-li.collection-item .content .material-icons{
+li.collection-item .content .material-icons {
     color: #607dbf;
 }
 
-li.collection-item .after{
+li.collection-item .after {
     background: rgba(104, 104, 104, 0.14);
 }
 
-li.collection-item .before{
+li.collection-item .before {
     background: rgba(60, 224, 0, 0.41);
 }
 
-li.collection-item.paused div.task-pause{
+li.collection-item.paused div.task-pause {
     color: #ff331f;
 }
 
-.task-key{
+.task-key {
     color: #9F9F9F;
 }
 
-.task-value{
+.task-value {
     color: #9F9F9F;
 }
 
-.task-value span{
+.task-value span {
     color: #2196F3;
 }
 
-.heading p{
+.heading p {
     color: #bbbd30;
 }
 
-p.description span.yellow{
+p.description span.yellow {
     color: #bbbd30 !important;
     background-color: transparent !important;
 }
 
-p.description span.blue{
+p.description span.blue {
     color: rgba(0, 8, 180, 0.85) !important;
     background-color: transparent !important;
 }
 
-
-.top-container.coming-soon h5{
+.top-container.coming-soon h5 {
     color: #9F9F9F;
+}
+
+.search {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+input.select-dropdown {
+    color: #9e9e9e;
+}
+
+.table-wrapper,
+div.task-description {
+    background-color: #ffffff;
+}
+
+div.task-description .title {
+    background: #03A9F4;
+    color: #FFFFFF;
+}
+
+div.task-description .title p{
+    color:#B3E5FC;
+}
+
+.transactions-table tbody td,
+div.history tbody td,
+div.task-description .description p {
+    color: #757575;
+}
+
+.transactions-table thead th,
+div.history p:first-child,
+div.history thead th,
+.description.card-description .deposit-type-view p,
+div.task-description .description p span {
+    color: #212121;
+}
+
+.task-description .tabs .tab a:hover,
+.task-description .tabs .tab a.active {
+    background-color: transparent;
+    color: #0288D1;
+}
+
+.task-description .tabs .tab a {
+    color: #BDBDBD;
+}
+
+.task-description .tabs .indicator{
+    background-color: #0288D1;
+}
+
+div.task-description progress::-webkit-progress-bar {
+    background-color: #FFFFFF;
+}
+
+div.task-description progress::-webkit-progress-value {
+    background-color: #FFFFFF;
+}
+
+div.task-description progress.blue::-webkit-progress-value {
+    background-color: #B3E5FC;
+}
+
+.progress-title{
+    color: #0288D1;
+}
+
+.blue {
+    background-color: #03A9F4 !important;
+}
+
+.task-type-icon{
+    color: #ffffff;
+}
+
+.description.progress-description .deposit-type-view span{
+   background-color: transparent !important;
+}
+
+.table-wrapper .transactions-table td.transaction-status.pause,
+.description.progress-description .deposit-type-view span.red{
+   color: #ff3d3d !important;
+}
+
+.table-wrapper .transactions-table td.transaction-status.retried,
+.description.progress-description .deposit-type-view span.yellow{
+   color: #fff135 !important;
+}
+
+.table-wrapper .transactions-table td.transaction-status.valid,
+.description.progress-description .deposit-type-view span.green{
+   color: #5eff69 !important;
+}
+
+div.task-description table {
+    background-color: transparent;
+}
+
+.description.card-description .edit-controls > i {
+    color: #fff135 !important;
+}
+
+.page-header{
+    color: #0288D1;
+}
+
+.empty{
+    color: #757575;
+}
+
+my-app{
+    background: linear-gradient(to right, #f2fcfe, #95CBFF, #f2fcfe);
 }

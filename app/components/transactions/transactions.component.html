@@ -1,0 +1,38 @@
+<div class="container top-container transactions">
+    <div class="row page-header">
+        <h4>Транзакции ваших карт и задач</h4>
+    </div>
+    <div class="row">
+        <div class="col s8 m8 l8">
+            <div class="table-wrapper">
+                <transactions-table [transactions]="getFilteredTransactions()"></transactions-table>
+            </div>
+            <div *ngIf="getFilteredTransactions() == undefined || getFilteredTransactions().length == 0">
+                <div class="empty">
+                    <h5 *ngIf="taskId == -1 && cardId == -1">
+                        Выберите интересующие значения фильтров для вывода транзакций
+                    </h5>
+                    <h5 *ngIf="taskId > -1 || cardId > -1">
+                        Не было найдено ни одной транзакции по данному критерию
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="col s4 m4 l4">
+            <div class="search">
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <h6>Выберите накопление:</h6>
+                        <tasks-selector (taskChange)="updateTaskFilter($event)"></tasks-selector>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <h6>Выберите кредитную карту:</h6>
+                        <cards-selector (cardChange)="updateCardFilter($event)" [isDefault]="true"></cards-selector>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,6 +8,9 @@ export class TranslationsProvider extends BaseTranslationsProvider{
     get smallTask(){ return this.get("smallTask");}
     get mediumTask(){ return this.get("mediumTask");}
     get longTask(){ return this.get("longTask");}
+    get visa(){ return this.get("visa");}
+    get mastercard(){ return this.get("mastercard");}
+    get belcard(){ return this.get("belcard");}
     get smallTaskDescription(){ return this.get("smallTaskDescription");}
     get mediumTaskDescription(){ return this.get("mediumTaskDescription");}
     get longTaskDescription(){ return this.get("longTaskDescription");}
@@ -30,6 +33,10 @@ export class TranslationsProvider extends BaseTranslationsProvider{
     get deleteDescriptionSecondPart(){ return this.get("deleteDescriptionSecondPart");}
     get deleteTitleFirstPart(){ return this.get("deleteTitleFirstPart");}
     get deleteTitleSecondPart(){ return this.get("deleteTitleSecondPart");}
+    get deleteTaskDescriptionFirstPart(){ return this.get("deleteDescriptionFirstPart");}
+    get deleteTaskDescriptionSecondPart(){ return this.get("deleteDescriptionSecondPart");}
+    get deleteTaskTitleFirstPart(){ return this.get("deleteTitleFirstPart");}
+    get deleteTaskTitleSecondPart(){ return this.get("deleteTitleSecondPart");}
     get cancel(){ return this.get("cancel");}
     get deleteTitle(){ return this.get("delete");}
     get settingsTitle(){ return this.get("settings");}
@@ -67,4 +74,7 @@ export class TranslationsProvider extends BaseTranslationsProvider{
     get paused(){ return this.get("paused");}
     get cardsFilterEmpty(){ return this.get("cardsFilterEmpty");}
     get tasksFilterEmpty(){ return this.get("tasksFilterEmpty");}
+    get transactionErrorStatus(){ return this.get("transactionErrorStatus");}
+    get transactionValidStatus(){ return this.get("transactionValidStatus");}
+    get transactionRetriedStatus(){ return this.get("transactionRetriedStatus");}
 }

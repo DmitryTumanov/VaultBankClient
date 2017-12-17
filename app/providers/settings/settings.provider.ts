@@ -20,6 +20,11 @@ export class SettingsProvider extends BaseSettingsProvider{
     get cardAddPath(){ return this.get("paths")["mainPath"]+this.get("paths")["cardAddPath"];}
     get tasksPath(){ return this.get("paths")["mainPath"]+this.get("paths")["tasksPath"];}
     get taskAddPath(){ return this.get("paths")["mainPath"]+this.get("paths")["taskAddPath"];}
+    get taskEditPath(){ return this.get("paths")["mainPath"]+this.get("paths")["taskEditPath"];}
+    get taskDeletePath(){ return this.get("paths")["mainPath"]+this.get("paths")["taskDeletePath"];}
+    get transactionsPath(){ return this.get("paths")["mainPath"]+this.get("paths")["transactionsPath"];}
+    get transactionsGetByCardPath(){ return this.get("paths")["mainPath"]+this.get("paths")["transactionsGetByCardPath"];}
+    get transactionsGetByTaskPath(){ return this.get("paths")["mainPath"]+this.get("paths")["transactionsGetByTaskPath"];}
     get cardRemovePath(){ return this.get("paths")["mainPath"]+this.get("paths")["cardRemovePath"];}
     get authorizationPath(){ return this.get("paths")["mainPath"]+this.get("paths")["authorizationPrefix"];}
     get authorizationSecondStep(){ return this.get("paths")["mainPath"]+this.get("paths")["authorizationSecondStep"];}

@@ -22,6 +22,9 @@ export class CardTypesComponent extends BaseComponent{
     }
 
     public updateCardType(type: number){
+        if(type == this.cardType){
+            type = -1;
+        }
         this.cardType = type;
         this.cardTypeChange.emit(type);
     }
