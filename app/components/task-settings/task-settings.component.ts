@@ -82,8 +82,6 @@ export class TaskSettingsComponent extends BaseComponent implements OnInit {
 
     public saveNewCard() {
         this.isOnCardChange = false;
-        this.task.creditCardId = this.cardId;
-        this.card = this.cards.filter(x => x.creditCardId == this.task.creditCardId)[0];
         this.cardId = -1;
         this.tasksProvider.editTask(this.task);
     }
@@ -95,16 +93,25 @@ export class TaskSettingsComponent extends BaseComponent implements OnInit {
 
     public cancelCardChange() {
         this.isOnCardChange = false;
+        this.task.creditCardId = this.cardId;
         this.card = this.cards.filter(x => x.creditCardId == this.task.creditCardId)[0];
         this.cardId = -1;
     }
 
     public updateTaskCard(cardId: number) {
-        this.cardId = cardId;
-        this.card = this.cards.filter(x => x.creditCardId == this.cardId)[0];
+        this.task.creditCardId = cardId;
+        this.card = this.cards.filter(x => x.creditCardId == this.task.creditCardId)[0];
     }
 
     public removeTask() {
         this.modalAction.emit({action: "modal", params: ['open']});
+    }
+
+    public isOkToDeleteTask(): boolean {
+        if(!this.taskType){
+            return false;
+        }
+        let percentsOfClosing = +this.taskType.percentCloseNumber;
+        return this.getTaskPercents() > percentsOfClosing;
     }
 }

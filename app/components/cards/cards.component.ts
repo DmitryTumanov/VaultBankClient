@@ -43,6 +43,12 @@ export class CardsComponent extends BaseComponent implements OnInit {
         this.selectedCardType = type;
     }
 
+    public async deleteCardFromList(result: boolean) {
+        if (result) {
+            this.cards = await this.cardProvider.getCards();
+        }
+    }
+
     private filterByCardType(cards: CardModel[]): CardModel[] {
         if (this.selectedCardType == -1) {
             return cards;

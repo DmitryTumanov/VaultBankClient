@@ -46,7 +46,7 @@ export class TaskRemoveConfirmComponent extends BaseComponent {
         this.preLoader.start();
         this.tasksProvider.removeTask(this.cardId, this.task.goalId).then((result: any) => {
             this.preLoader.stop();
-            return this.router.navigateByUrl("/");
+            return this.router.navigateByUrl("/tasks");
         });
     }
 

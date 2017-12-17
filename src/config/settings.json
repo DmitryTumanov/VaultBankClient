@@ -33,7 +33,8 @@
   "taskTypes": [
     {
       "typeKey": 7,
-      "monthsNumber": 6,
+      "monthsNumber": 3,
+      "percentCloseNumber": 66,
       "translateKey": "smallTask",
       "color": "#5eff69",
       "descriptionKey": "smallTaskDescription"
@@ -41,6 +42,7 @@
     {
       "typeKey": 11,
       "monthsNumber": 24,
+      "percentCloseNumber": 60,
       "translateKey": "mediumTask",
       "color": "#fff135",
       "descriptionKey": "mediumTaskDescription"
@@ -48,6 +50,7 @@
     {
       "typeKey": 14,
       "monthsNumber": 60,
+      "percentCloseNumber": 70,
       "translateKey": "longTask",
       "color": "#ff3d3d",
       "descriptionKey": "longTaskDescription"

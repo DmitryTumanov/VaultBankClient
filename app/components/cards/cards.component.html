@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col s8 m8 l8 cards-list">
             <div class="plastic-card" *ngFor="let card of getFilteredCards()">
-                <card-item [card]="card"></card-item>
+                <card-item [card]="card" (cardOnDelete)="deleteCardFromList($event)"></card-item>
             </div>
             <div *ngIf="getFilteredCards() == undefined || getFilteredCards().length == 0">
                 <div class="empty">

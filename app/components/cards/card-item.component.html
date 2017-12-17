@@ -1,4 +1,4 @@
-<div class="col m12 s12 l12">
+<div class="col m12 s12 l12" *ngIf="card">
     <div class="card horizontal" [ngClass]="{'paused':card.isPaused}">
         <div class="card-image">
             <img [src]="'images/'+getCardImage(card.cardType)">
@@ -21,4 +21,4 @@
         <!--</div>-->
     </div>
 </div>
-<card-remove-confirm [card]="card" [modalAction]="modalAction"></card-remove-confirm>
+<card-remove-confirm [card]="card" [modalAction]="modalAction" (cardOnDelete)="deleteCardFromList($event)"></card-remove-confirm>

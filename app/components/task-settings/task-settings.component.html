@@ -6,7 +6,7 @@
             <p>{{task.description}}</p>
         </div>
         <div class="progress">
-            <progress value="50" max="100" class="blue"></progress>
+            <progress [value]="getTaskPercents()" max="100" class="blue"></progress>
         </div>
         <div class="task-settings-content">
             <div class="row">
@@ -38,7 +38,7 @@
                             </button>
                             <div class="edit-controls" *ngIf="isOnCardChange">
                                 <button class="btn waves-effect waves-light blue"
-                                        [disabled]="cardId <= 0"
+                                        [disabled]="task.creditCardId <= 0"
                                         (click)="saveNewCard()">
                                     <i class="material-icons right">save</i>Сохранить карту
                                 </button>
@@ -70,7 +70,7 @@
                         </span>
                         </div>
                         <div class="task-actions">
-                            <button class="btn waves-effect waves-light red" (click)="removeTask()">
+                            <button class="btn waves-effect waves-light red" (click)="removeTask()" [disabled]="!isOkToDeleteTask()">
                                 <i class="material-icons right">delete</i>Удалить задачу
                             </button>
                         </div>

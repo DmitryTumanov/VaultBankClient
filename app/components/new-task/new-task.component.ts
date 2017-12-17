@@ -80,6 +80,9 @@ export class NewTaskComponent extends BaseComponent implements OnInit {
         model.title = this.firstStepValidator.value.title;
         model.description = this.firstStepValidator.value.description;
         model.creditCardId = this.firstStepValidator.value.creditCardId;
+        if(!model.creditCardId){
+            model.isPaused = true;
+        }
         model.targetEnd = new Date(this.convertDate(this.firstStepValidator.value.targetEnd));
         model.targetType = this.secondStepValidator.value.targetType;
         model.moneyTarget = this.secondStepValidator.value.moneyTarget;

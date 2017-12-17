@@ -25,7 +25,7 @@ export class CardsService extends BaseService{
 
     public removeCard(card: CardModel):Promise<boolean>{
         return new Promise((resolve, reject) => {
-            this.deleteAuthorized(this.settings.cardRemovePath+"/"+card.creditCardId)
+            this.postAuthorized(this.settings.cardRemovePath, card.creditCardId)
                 .subscribe((response: boolean) => {
                     resolve(response);
                 });
