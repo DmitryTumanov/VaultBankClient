@@ -44,7 +44,7 @@ export class NewCardComponent extends BaseComponent implements OnInit {
             if (result) {
                 return this.router.navigateByUrl("/cards");
             }
-            this.fatalError = "Fatal Error";
+            this.fatalError = "Возникли неполадки при создании карьы. Пожалуйста, попробуйте еще раз.";
         });
     }
 

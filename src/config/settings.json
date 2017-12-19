@@ -35,6 +35,7 @@
       "typeKey": 7,
       "monthsNumber": 3,
       "percentCloseNumber": 66,
+      "yearPercents": 2,
       "translateKey": "smallTask",
       "color": "#5eff69",
       "descriptionKey": "smallTaskDescription"
@@ -43,6 +44,7 @@
       "typeKey": 11,
       "monthsNumber": 24,
       "percentCloseNumber": 60,
+      "yearPercents": 5,
       "translateKey": "mediumTask",
       "color": "#fff135",
       "descriptionKey": "mediumTaskDescription"
@@ -51,6 +53,7 @@
       "typeKey": 14,
       "monthsNumber": 60,
       "percentCloseNumber": 70,
+      "yearPercents": 10,
       "translateKey": "longTask",
       "color": "#ff3d3d",
       "descriptionKey": "longTaskDescription"

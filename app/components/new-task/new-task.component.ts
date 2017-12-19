@@ -46,7 +46,7 @@ export class NewTaskComponent extends BaseComponent implements OnInit {
             if (result) {
                 return this.router.navigateByUrl("/tasks");
             }
-            this.fatalError = "Fatal Error";
+            this.fatalError = "Возьникли неполадки при создании задачи. Попробуйте снова.";
         });
     }
 
@@ -85,10 +85,9 @@ export class NewTaskComponent extends BaseComponent implements OnInit {
         }
         model.targetEnd = new Date(this.convertDate(this.firstStepValidator.value.targetEnd));
         model.targetType = this.secondStepValidator.value.targetType;
-        model.moneyTarget = this.secondStepValidator.value.moneyTarget;
-        model.moneyPerMonth = this.secondStepValidator.value.moneyPerMonth;
-        let day = +$(".range-field .thumb .value").text();
-        model.chargeDate = day;
+        model.moneyTarget = this.firstStepValidator.value.moneyTarget;
+        model.moneyPerMonth = this.firstStepValidator.value.moneyPerMonth;
+        model.chargeDate = +$(".range-field .thumb .value").text();
         return model;
     }
 

@@ -45,7 +45,7 @@ export class LoginKeyStepComponent extends BaseComponent {
                 this.storage.set(this.settings.userKey, result.token.username);
                 return this.router.navigateByUrl("/cards");
             }
-            this.fatalError = "Invalid access key";
+            this.fatalError = "Проверьте правильность введенного ключа";
         });
     }
 

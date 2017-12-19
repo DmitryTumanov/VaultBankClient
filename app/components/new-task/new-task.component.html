@@ -26,7 +26,8 @@
                 </div>
                 <div class="step-content">
                     <new-task-step-two [(val)]="secondStepValidator"
-                                       [targetEnd]="firstStepValidator.value.targetEnd"></new-task-step-two>
+                                       [targetEnd]="firstStepValidator.value.targetEnd"
+                                       [moneyTarget]="firstStepValidator.value.moneyTarget"></new-task-step-two>
                     <div class="step-actions">
                         <button class="waves-effect btn-flat previous-step">BACK</button>
                         <button class="waves-effect btn blue next-step right"

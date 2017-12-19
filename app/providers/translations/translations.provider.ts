@@ -77,4 +77,6 @@ export class TranslationsProvider extends BaseTranslationsProvider{
     get transactionErrorStatus(){ return this.get("transactionErrorStatus");}
     get transactionValidStatus(){ return this.get("transactionValidStatus");}
     get transactionRetriedStatus(){ return this.get("transactionRetriedStatus");}
+    get taskPercents(){ return this.get("taskPercents");}
+    get totalSumOfTask(){ return this.get("totalSumOfTask");}
 }

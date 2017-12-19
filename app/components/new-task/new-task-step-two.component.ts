@@ -11,6 +11,8 @@ export class NewTaskStepTwoComponent extends BaseComponent{
 
     @Input()
     public targetEnd: any;
+    @Input()
+    public moneyTarget: any;
 
     @Input()
     get val(){

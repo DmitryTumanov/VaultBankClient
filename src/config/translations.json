@@ -21,15 +21,15 @@
   },
   "smallTaskDescription":{
     "EN": "Small period",
-    "RU": "Малый период"
+    "RU": "Малый период предназначен для самых маленьких накоплений(например велосипед)"
   },
   "mediumTaskDescription":{
     "EN": "Middle period",
-    "RU": "Средний период"
+    "RU": "Средний период предназначен для средних накоплений(например машина)"
   },
   "longTaskDescription":{
     "EN": "Long period",
-    "RU": "Продолжительный период"
+    "RU": "Продолжительный период предназначен для самых больших накоплений(например машина, квартира)"
   },
   "taskTypeButton":{
     "EN": "Select",
@@ -294,5 +294,13 @@
   "transactionRetriedStatus":{
     "EN": "Retried",
     "RU": "Повторена"
+  },
+  "taskPercents":{
+    "EN": "Error",
+    "RU": "Процент по тарифу"
+  },
+  "totalSumOfTask":{
+    "EN": "Retried",
+    "RU": "ИТОГО, общее накопление"
   }
 }

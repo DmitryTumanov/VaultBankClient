@@ -4,7 +4,7 @@
                [formControl]="getControl('title')">
         <label for="customCardName">{{translator.editTaskNamePlaceholder}}</label>
         <error-field [expression]="validateControl('title')"
-                     [text]="'Task Name required'"></error-field>
+                     [text]="'Введите имя задачи'"></error-field>
     </div>
 </div>
 <div class="row textarea">
@@ -23,24 +23,24 @@
                [formControl]="getControl('targetEnd')"
                materialize="pickadate"
                [materializeParams]="pickerFormat">
-        <label for="date">{{translator.editTaskEndPlaceholder}}</label>
+        <label for="date" [ngClass]="{'active':!!targetEndValue}">{{translator.editTaskEndPlaceholder}}</label>
         <error-field [expression]="validateControl('targetEnd')"
-                     [text]="'Task End Date required'"></error-field>
+                     [text]="'Введите дату окончания задачи'"></error-field>
     </div>
 </div>
 <div class="row">
     <div class="input-field col s12 m6 l6">
         <input id="month" type="number" class="validate"
                [formControl]="getControl('moneyPerMonth')">
-        <label for="month">{{translator.editTaskMonthSumPlaceholder}}</label>
+        <label for="month" [ngClass]="{'active':!!moneyPerMonthValue}">{{translator.editTaskMonthSumPlaceholder}}</label>
         <error-field [expression]="validateControl('moneyPerMonth')"
-                     [text]="'Task Month Sum required'"></error-field>
+                     [text]="'Введите величину месячного платежа'"></error-field>
     </div>
     <div class="input-field col s12 m6 l6">
         <input id="sum" type="number" class="validate"
                [formControl]="getControl('moneyTarget')">
-        <label for="sum">{{translator.editTaskTotalSumPlaceholder}}</label>
+        <label for="sum" [ngClass]="{'active':!!moneyTargetValue}">{{translator.editTaskTotalSumPlaceholder}}</label>
         <error-field [expression]="validateControl('moneyTarget')"
-                     [text]="'Task Total Sum required'"></error-field>
+                     [text]="'Введите величину итогового платежа'"></error-field>
     </div>
 </div>

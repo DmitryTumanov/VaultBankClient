@@ -16,8 +16,10 @@
                     {{translator[taskType.translateKey]}}
                 </span>
             </div>
-            <div class="collapsible-body">
+            <div class="collapsible-body" *ngIf="taskType">
                 <p>{{translator[taskType.descriptionKey]}}</p>
+                <p class="task-type-settings">{{translator.taskPercents}} : {{taskType.yearPercents}}</p>
+                <p class="task-type-settings">{{translator.totalSumOfTask}} : {{getOverallMoney(taskType) | number : '1.2'}}</p>
                 <button class="btn btn-default confirm-task-type" [style.background]="taskType.color"
                         (click)="updateTaskType(taskType.typeKey)" *ngIf="!isTaskTypeActive(taskType.typeKey)">
                     {{translator.taskTypeButton}} {{translator[taskType.translateKey]}}?

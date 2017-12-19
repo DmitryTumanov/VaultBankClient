@@ -44,7 +44,7 @@ export class LoginFirstStepComponent extends BaseComponent implements OnInit{
         this.authorizationProvider.authorizeFirstStep(this.model).then((result:LoginResponseModel)=>{
             this.preLoader.stop();
             if(isNullOrUndefined(result) || result.isError){
-                this.fatalError = "Fatal Error";
+                this.fatalError = "Неверные логин и пароль";
                 return;
             }
             if(result.isRegistrationNotFinished){
@@ -53,7 +53,7 @@ export class LoginFirstStepComponent extends BaseComponent implements OnInit{
             if(result.isWaitTwoWayKey){
                 return this.router.navigate(["/login-key-step", this.model.login]);
             }
-            this.fatalError = "Fatal Error";
+            this.fatalError = "Неверные логин и пароль";
         });
     }
 

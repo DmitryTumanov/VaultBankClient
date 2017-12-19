@@ -41,7 +41,7 @@ export class LoginThirdStepComponent extends BaseComponent {
             if(result){
                 return this.router.navigateByUrl("/");
             }
-            this.fatalError = "Invalid access key";
+            this.fatalError = "Проверьте правильность ввода ключа";
         });
     }
 

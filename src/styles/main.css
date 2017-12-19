@@ -785,3 +785,7 @@ my-app{
     width: 100%;
     position: absolute;
 }
+
+.task-type-settings{
+    margin: 0;
+}

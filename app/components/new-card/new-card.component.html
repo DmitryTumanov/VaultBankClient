@@ -11,7 +11,7 @@
                            [formControl]="getControl('customCardName')">
                     <label for="customCardName">{{translator.cardNamePlaceholder}}</label>
                     <error-field [expression]="validateControl('customCardName')"
-                                 [text]="'Card Name required'"></error-field>
+                                 [text]="'Введите имя карты'"></error-field>
                 </div>
             </div>
             <div class="row">
@@ -20,7 +20,7 @@
                            [formControl]="getControl('ownerFullName')">
                     <label for="ownerFullName">{{translator.ownerNamePlaceholder}}</label>
                     <error-field [expression]="validateControl('ownerFullName')"
-                                 [text]="'Owner Name required'"></error-field>
+                                 [text]="'Введите имя владельца'"></error-field>
                 </div>
             </div>
             <div class="row">
@@ -29,7 +29,7 @@
                            [formControl]="getControl('cardNumber')">
                     <label for="cardNumber">{{translator.cardNumber}}</label>
                     <error-field [expression]="validateControl('cardNumber')"
-                                 [text]="'Card Number required'"></error-field>
+                                 [text]="'Введите валидный номер карты'"></error-field>
                 </div>
             </div>
             <div class="row">
@@ -38,14 +38,14 @@
                            [formControl]="getControl('CVV')">
                     <label for="CVV">{{translator.cvvPlaceholder}}</label>
                     <error-field [expression]="validateControl('CVV')"
-                                 [text]="'CVV required'"></error-field>
+                                 [text]="'Введите cvv'"></error-field>
                 </div>
                 <div class="input-field col s12 m6 l6">
                     <input id="expirationDate" type="text" class="validate"
                            [formControl]="getControl('expirationDate')">
                     <label for="expirationDate">{{translator.expirationDatePlaceholder}}</label>
                     <error-field [expression]="validateControl('expirationDate')"
-                                 [text]="'Expiration Date required'"></error-field>
+                                 [text]="'Введите дату окончания срока карты'"></error-field>
                 </div>
             </div>
             <div class="row">

@@ -23,7 +23,7 @@
                     <input class='validate' type='password' name='password' id='password' [formControl]="getControl('password')"/>
                     <label for='password'>{{translator.loginNewEnter}}</label>
                     <error-field [expression]="validateControl('password')"
-                                 [text]="'Password required'"></error-field>
+                                 [text]="'Введите пароль!'"></error-field>
                 </div>
             </div>
             <div class='row text-input'>
@@ -31,7 +31,7 @@
                     <input class='validate' type='password' name='password' id='passwordCheck' [formControl]="getControl('passwordCheck')"/>
                     <label for='passwordCheck'>{{translator.confirmLoginNewEnter}}</label>
                     <error-field [expression]="validateControl('passwordCheck')"
-                                 [text]="'Password check required'"></error-field>
+                                 [text]="'Пароли должны совпадать!'"></error-field>
                 </div>
             </div>
             <div class='row'>
@@ -42,7 +42,7 @@
                     <input class='validate' type='email' name='email' id='email' [formControl]="getControl('email')"/>
                     <label for='email'>{{translator.emailEnter}}</label>
                     <error-field [expression]="validateControl('email')"
-                                 [text]="'Email required'"></error-field>
+                                 [text]="'Введите email'"></error-field>
                 </div>
             </div>
             <div class='row text-input' *ngIf="validator.controls.authModelType.value == 1">
@@ -50,7 +50,7 @@
                     <input class='validate' type='text' name='telephone' id='telephone' [formControl]="getControl('telephone')"/>
                     <label for='email'>Telephone</label>
                     <error-field [expression]="validateControl('telephone')"
-                                 [text]="'Telephone required'"></error-field>
+                                 [text]="'Введите номер телефона'"></error-field>
                 </div>
             </div>
             <error-field [expression]="fatalError" [text]="fatalError"></error-field>

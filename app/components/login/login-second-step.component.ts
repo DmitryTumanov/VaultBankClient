@@ -43,10 +43,10 @@ export class LoginSecondStepComponent extends BaseComponent {
                     return this.router.navigate(["/login-third-step", this.model.login, this.model.twoWayAuthTarget]);
                 }
                 if (result.isEmailOrPhoneExists) {
-                    this.fatalError = "Email exists";
+                    this.fatalError = "Такой email уже существует";
                 }
                 if (result.userNameNotFound) {
-                    this.fatalError = "There is no user with this login";
+                    this.fatalError = "Нет пользователя с таким именем";
                 }
             });
     }

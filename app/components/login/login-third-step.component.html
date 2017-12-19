@@ -24,7 +24,7 @@
                     <input class='validate' type='text' name='password' id='password' [formControl]="getControl('twoWayAuthKey')"/>
                     <label for='password'>{{translator.accessKeyEnter}}</label>
                     <error-field [expression]="validateControl('twoWayAuthKey')"
-                                 [text]="'Auth key required'"></error-field>
+                                 [text]="'Ключ валидации обязателен'"></error-field>
                 </div>
             </div>
             <error-field [expression]="fatalError" [text]="fatalError"></error-field>
